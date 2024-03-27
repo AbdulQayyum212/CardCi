@@ -40,8 +40,6 @@ export default function RecipientName() {
           title="Back"
           style={{
             width: '45%',
-            padding: 10,
-            borderRadius: 20,
             borderColor: 'grey',
           }}
         />
@@ -51,8 +49,6 @@ export default function RecipientName() {
           onPress={() => navigation.navigate('RelationShip')}
           style={{
             width: '45%',
-            padding: 10,
-            borderRadius: 20,
             borderColor: 'grey',
           }}
         />

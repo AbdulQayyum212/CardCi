@@ -43,13 +43,13 @@ const DeliveryDate = () => {
           <View style={tw`p-[20] w-[100%] `}>
             <View
               style={tw`bg-white border-4 w-{100%} rounded-3xl p-3 flex-row items-center justify-between `}>
-              <Text>{selectedDate}</Text>
+              <Text style={tw`text-black font-bold`}>{selectedDate}</Text>
               <TouchableOpacity
                 onPress={() => {
                   setCalendarOpen(!calendarOpen);
                   setSelectedDate('Date of event');
                 }}>
-                <Icon name="calendar-clear" size={25} />
+                <Icon name="calendar-clear" color={'black'} size={25} />
               </TouchableOpacity>
             </View>
           </View>
@@ -57,6 +57,7 @@ const DeliveryDate = () => {
             <Calendar
               style={{
                 borderWidth: 4,
+                marginBottom: 20,
                 //   borderColor: 'gray',
                 //   height: 250,
                 //   marginBottom: 20,
@@ -84,19 +85,16 @@ const DeliveryDate = () => {
           title="Back"
           style={{
             width: '45%',
-            padding: 10,
-            borderRadius: 20,
             borderColor: 'grey',
           }}
         />
         <Btn
+          // stylebtn={{width: '60%',background:'red'}}
           right
           title="Continue"
           onPress={() => navigation.navigate('YourCard')}
           style={{
             width: '45%',
-            padding: 10,
-            borderRadius: 20,
             borderColor: 'grey',
           }}
         />

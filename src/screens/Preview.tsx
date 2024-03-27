@@ -64,66 +64,66 @@ const Preview = () => {
         tw`flex-1  justify-between`,
         {backgroundColor: 'rgba(234, 247, 252, 1)'},
       ]}>
-      <ScrollView showsVerticalScrollIndicator={false}>
-        <View style={tw`  items-center  w-full justify-center px-5 `}>
-          <Image
-            style={{
-              marginTop: 50,
-              width: 100,
-              height: 100,
-              marginBottom: 10,
-              // marginLeft: 20,
-            }}
-            resizeMode="contain"
-            source={require('../../assets/cardci-Logo.png')}
-          />
+      {/* <ScrollView showsVerticalScrollIndicator={false}> */}
+      <View style={tw`  items-center  w-full justify-center px-5 `}>
+        <Image
+          style={{
+            marginTop: 50,
+            width: 100,
+            height: 100,
+            marginBottom: 10,
+            // marginLeft: 20,
+          }}
+          resizeMode="contain"
+          source={require('../../assets/cardci-Logo.png')}
+        />
 
-          <Text style={tw`text-[8] text-black font-bold text-center`}>
-            Preview
-          </Text>
-          <View style={tw`w-[100%] gap-3 mt-1  justify-center p-5`}>
-            {/* <View style={tw` w-full h-50 rounded-2xl overflow-hidden`}>
+        <Text style={tw`text-[8] text-black font-bold text-center`}>
+          Preview
+        </Text>
+        <View style={tw`w-[100%] gap-3 mt-1  justify-center p-5`}>
+          {/* <View style={tw` w-full h-50 rounded-2xl overflow-hidden`}>
               <ImageBackground
                 style={tw` w-full h-50 rounded-2xl`}
                 source={require('../../assets/image.png')}
               />
             </View> */}
-          </View>
-          <Animated.View
-            style={[
-              frontStyle,
-              tw`w-75 rounded-2xl overflow-hidden h-50`,
-              styles.card,
-              {
-                backgroundColor: 'red',
-              },
-            ]}>
-            <ImageBackground
-              style={tw` w-full h-50 rounded-2xl`}
-              source={require('../../assets/image.png')}
-            />
-          </Animated.View>
-          <Animated.View
-            style={[
-              backStyle,
-              tw`w-75 rounded-2xl overflow-hidden h-50`,
-              styles.card,
-              {
-                backgroundColor: 'blue',
-              },
-            ]}>
-            <LinearGradient
-              colors={['#BAEDE5', '#B8D5F9']}
-              style={[
-                tw`w-75 rounded-2xl overflow-hidden h-50 justify-center items-center p-5`,
-              ]}>
-              <Text style={tw`text-center text-2xl`}>
-                In your eyes, I found the universe I've always longed for.
-              </Text>
-            </LinearGradient>
-          </Animated.View>
         </View>
-      </ScrollView>
+        <Animated.View
+          style={[
+            frontStyle,
+            tw`w-75 rounded-2xl overflow-hidden h-50`,
+            styles.card,
+            {
+              backgroundColor: 'red',
+            },
+          ]}>
+          <ImageBackground
+            style={tw` w-full h-50 rounded-2xl`}
+            source={require('../../assets/image.png')}
+          />
+        </Animated.View>
+        <Animated.View
+          style={[
+            backStyle,
+            tw`w-75 rounded-2xl overflow-hidden h-50`,
+            styles.card,
+            {
+              backgroundColor: 'blue',
+            },
+          ]}>
+          <LinearGradient
+            colors={['#BAEDE5', '#B8D5F9']}
+            style={[
+              tw`w-75 rounded-2xl overflow-hidden h-50 justify-center items-center p-5`,
+            ]}>
+            <Text style={tw`text-center text-2xl`}>
+              In your eyes, I found the universe I've always longed for.
+            </Text>
+          </LinearGradient>
+        </Animated.View>
+      </View>
+      {/* </ScrollView> */}
       <View style={tw`flex-row items-center justify-between px-2 mb-4 mt-5`}>
         <Btn
           left
@@ -141,8 +141,6 @@ const Preview = () => {
           title="Back"
           style={{
             width: '45%',
-            padding: 10,
-            borderRadius: 20,
             borderColor: 'grey',
           }}
         />
@@ -153,8 +151,6 @@ const Preview = () => {
           //   onPress={() => navigation.navigate('DeliveryDate')}
           style={{
             width: '45%',
-            padding: 10,
-            borderRadius: 20,
             borderColor: 'grey',
           }}
         />

@@ -94,8 +94,6 @@ const RelationShip = () => {
           title="Back"
           style={{
             width: '45%',
-            padding: 10,
-            borderRadius: 20,
             borderColor: 'grey',
           }}
         />
@@ -105,8 +103,6 @@ const RelationShip = () => {
           title="Continue"
           style={{
             width: '45%',
-            padding: 10,
-            borderRadius: 20,
             borderColor: 'grey',
           }}
         />

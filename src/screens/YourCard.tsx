@@ -152,7 +152,7 @@ const YourCard = () => {
                     source={require('../../assets/image.png')}
                   />
                 </View>
-                <View style={tw`flex-row items-center justify-`}>
+                <View style={tw`flex-row items-center gap-2`}>
                   <TouchableOpacity>
                     <Icon name="left" size={25} />
                   </TouchableOpacity>
@@ -216,8 +216,6 @@ const YourCard = () => {
           title="Back"
           style={{
             width: '45%',
-            padding: 10,
-            borderRadius: 20,
             borderColor: 'grey',
           }}
         />
@@ -227,8 +225,6 @@ const YourCard = () => {
           onPress={() => navigation.navigate('Preview')}
           style={{
             width: '45%',
-            padding: 10,
-            borderRadius: 20,
             borderColor: 'grey',
           }}
         />

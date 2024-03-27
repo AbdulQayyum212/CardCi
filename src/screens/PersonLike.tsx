@@ -47,8 +47,8 @@ const PersonLike = () => {
             title="Back"
             style={{
               width: '45%',
-              padding: 10,
-              borderRadius: 20,
+              // padding: 10,
+              // borderRadius: 20,
               borderColor: 'grey',
             }}
           />
@@ -58,8 +58,8 @@ const PersonLike = () => {
             onPress={() => navigation.navigate('Home')}
             style={{
               width: '45%',
-              padding: 10,
-              borderRadius: 20,
+              // padding: 10,
+              // borderRadius: 20,
               borderColor: 'grey',
             }}
           />

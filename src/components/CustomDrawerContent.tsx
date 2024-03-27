@@ -23,9 +23,8 @@ const CustomDrawerContent = (props: DrawerContentComponentProps) => {
         style={tw`flex-row items-center   mt-4 w-full justify-between px-5`}>
         <Image
           style={{
-            marginTop: -20,
-            width: 70,
-            height: 70,
+            width: 80,
+            height: 80,
             marginBottom: 20,
             marginLeft: 20,
           }}

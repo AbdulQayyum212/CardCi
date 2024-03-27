@@ -89,7 +89,9 @@ const Wish = () => {
             borderColor: 'grey',
           }}
         /> */}
-        <TouchableOpacity style={tw`w-full`}>
+        <TouchableOpacity
+          onPress={() => navigation.goBack()}
+          style={tw`w-full`}>
           <LinearGradient
             colors={['#BAEDE5', '#B8D5F9']}
             style={[

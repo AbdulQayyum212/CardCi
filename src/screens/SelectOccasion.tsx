@@ -529,8 +529,6 @@ const SelectOccasion = () => {
           title="Back"
           style={{
             width: '45%',
-            padding: 10,
-            borderRadius: 20,
             borderColor: 'grey',
           }}
         />
@@ -540,8 +538,6 @@ const SelectOccasion = () => {
           onPress={() => navigation.navigate('DeliveryDate')}
           style={{
             width: '45%',
-            padding: 10,
-            borderRadius: 20,
             borderColor: 'grey',
           }}
         />
