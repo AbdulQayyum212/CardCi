@@ -24,7 +24,9 @@ import Animated, {
   withTiming,
 } from 'react-native-reanimated';
 import LinearGradient from 'react-native-linear-gradient';
-const Preview = () => {
+const Preview = ({route}) => {
+  console.log('props', route);
+
   const navigation = useNavigation();
   const rotationF = useSharedValue(0);
   const rotationB = useSharedValue(180);
@@ -92,30 +94,30 @@ const Preview = () => {
         <Animated.View
           style={[
             frontStyle,
-            tw`w-75 rounded-2xl overflow-hidden h-50`,
+            tw`w-full rounded-2xl overflow-hidden h-50`,
             styles.card,
-            {
-              backgroundColor: 'red',
-            },
+            // {
+            //   backgroundColor: 'red',
+            // },
           ]}>
           <ImageBackground
             style={tw` w-full h-50 rounded-2xl`}
-            source={require('../../assets/image.png')}
+            source={route?.params?.img?.img}
           />
         </Animated.View>
         <Animated.View
           style={[
             backStyle,
-            tw`w-75 rounded-2xl overflow-hidden h-50`,
+            tw`w-full rounded-2xl overflow-hidden h-50`,
             styles.card,
-            {
-              backgroundColor: 'blue',
-            },
+            // {
+            //   backgroundColor: 'blue',
+            // },
           ]}>
           <LinearGradient
             colors={['#BAEDE5', '#B8D5F9']}
             style={[
-              tw`w-75 rounded-2xl overflow-hidden h-50 justify-center items-center p-5`,
+              tw`w-full rounded-2xl overflow-hidden h-50 justify-center items-center p-5`,
             ]}>
             <Text style={tw`text-center text-2xl`}>
               In your eyes, I found the universe I've always longed for.
@@ -170,7 +172,7 @@ const styles = StyleSheet.create({
   card: {
     position: 'absolute',
     top: 220,
-    left: 40,
+    left: 20,
     // width: '100%',
     // height: '100%',
     backfaceVisibility: 'hidden',

@@ -8,22 +8,39 @@ import {
   TouchableOpacity,
   FlatList,
 } from 'react-native';
-import React, {useState} from 'react';
+import React, {useRef, useState} from 'react';
 import tw from 'twrnc';
 import Input from '../components/Input';
 import Btn from '../components/Btn';
 import {useNavigation} from '@react-navigation/native';
-import {Chip} from 'react-native-ui-lib';
 import {Alert} from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign';
+import LinearGradient from 'react-native-linear-gradient';
+import Chip from '../components/Chip';
 const YourCard = () => {
   const navigation = useNavigation();
   const [condition, setCondition] = useState('Choose a Template');
+  const [flatListScrollIndex, setFLatListScrollIndex] = useState(0);
+  const [img, setImg] = useState('');
+  const [listIndex, setListIndex] = useState<number>();
   const image = [
-    {img: require('../../assets/image.png')},
-    {img: require('../../assets/img.png')},
-    {img: require('../../assets/image.png')},
+    {img: require('../../assets/image.png'), id: 1},
+    {img: require('../../assets/img.png'), id: 2},
+    {img: require('../../assets/image.png'), id: 3},
+    {img: require('../../assets/img.png'), id: 4},
+    {img: require('../../assets/image.png'), id: 5},
+    {img: require('../../assets/img.png'), id: 6},
+    {img: require('../../assets/image.png'), id: 7},
+    {img: require('../../assets/img.png'), id: 8},
+    {img: require('../../assets/image.png'), id: 9},
+    {img: require('../../assets/img.png'), id: 10},
+    {img: require('../../assets/image.png'), id: 11},
+    {img: require('../../assets/img.png'), id: 12},
+    {img: require('../../assets/image.png'), id: 13},
   ];
+  const scrollRef = useRef<FlatList>(null);
+  console.log('flatListScrollIndex', flatListScrollIndex);
+
   return (
     <SafeAreaView
       style={[
@@ -50,92 +67,20 @@ const YourCard = () => {
           <View>
             <View style={tw`w-[100%] gap-3 mt-5 flex-row`}>
               <Chip
-                // id={key}
-                style={{
-                  padding: 10,
-                  // paddingVertical: 10,
-                  borderRadius: 20,
-                  width: 160,
-                  backgroundColor: '#F5F5F5',
-                  borderWidth: 1,
-                  borderColor: 'grey',
-                }}
-                // leftElement={
-                //   <Image
-                //     style={{width: 30, height: 30}}
-                //     source={value.image}
-                //   />
-                // }
-                label={'Choose a Template'}
                 onPress={() => setCondition('Choose a Template')}
-                // onPress={() =>
-                //   setPublishListing((prev: any) => ({
-                //     ...prev,
-                //     [k]: {
-                //       ...v,
-                //       ...{
-                //         [key]: {...value, selected: !value.selected},
-                //       },
-                //     },
-                //   }))
-                // }
+                label="Choose a Template"
               />
               <Chip
-                // id={key}
-                style={{
-                  padding: 10,
-                  // paddingVertical: 10,
-                  borderRadius: 20,
-                  width: 130,
-                  backgroundColor: '#F5F5F5',
-                  borderWidth: 1,
-                  borderColor: 'grey',
-                }}
-                // leftElement={
-                //   <Image
-                //     style={{width: 30, height: 30}}
-                //     source={value.image}
-                //   />
-                // }
-                label={'Upload Image'}
                 onPress={() => setCondition('Upload Image')}
-                // onPress={() =>
-                //   setPublishListing((prev: any) => ({
-                //     ...prev,
-                //     [k]: {
-                //       ...v,
-                //       ...{
-                //         [key]: {...value, selected: !value.selected},
-                //       },
-                //     },
-                //   }))
-                // }
-                //   onPress={() => setCondition('Festival')}
+                label="Upload Image"
               />
             </View>
           </View>
           <View>
             <View style={tw`w-[100%] gap-3 mt-3 flex-row`}>
               <Chip
-                // id={key}
-                style={{
-                  padding: 10,
-                  // paddingVertical: 10,
-                  borderRadius: 20,
-                  width: 200,
-                  backgroundColor: '#F5F5F5',
-                  borderWidth: 1,
-                  borderColor: 'grey',
-                }}
-                // leftElement={
-                //   <Image
-                //     style={{width: 30, height: 30}}
-                //     source={value.image}
-                //   />
-                // }
-                label={'Text To Image (Ai Prompt)'}
-                onPress={() => setCondition('Text To Image (Ai Prompt)')}
-                // onPress={() => setCondition('Festival')}
+                onPress={() => setCondition('Upload Image')}
+                label="Text To Image (Ai Prompt)"
               />
             </View>
           </View>
@@ -149,33 +94,86 @@ const YourCard = () => {
                   {/* <Text s>Card</Text> */}
                   <ImageBackground
                     style={tw` w-full h-50 rounded-2xl`}
-                    source={require('../../assets/image.png')}
+                    source={img ? img.img : require('../../assets/image.png')}
                   />
                 </View>
                 <View style={tw`flex-row items-center gap-2`}>
-                  <TouchableOpacity>
+                  <TouchableOpacity
+                    //prev
+                    onPress={() => {
+                      if (flatListScrollIndex > 0) {
+                        scrollRef.current?.scrollToIndex({
+                          animated: true,
+                          index: flatListScrollIndex - 1,
+                        });
+                        setFLatListScrollIndex(prev => prev - 1);
+                      }
+                    }}>
                     <Icon name="left" size={25} />
                   </TouchableOpacity>
                   <FlatList
+                    // onScroll={handleScroll}
+                    ref={scrollRef}
                     showsHorizontalScrollIndicator={false}
                     contentContainerStyle={tw`ml-3`}
                     data={image}
                     horizontal
-                    renderItem={({item}) => {
+                    renderItem={({item, index}) => {
                       return (
-                        <View
-                          style={tw` w-30 h-20 rounded-2xl overflow-hidden mr-5`}>
-                          {/* <Text s>Card</Text> */}
-                          <ImageBackground
-                            style={tw` w-30 h-20 rounded-2xl`}
-                            source={item.img}
-                          />
-                        </View>
+                        <LinearGradient
+                          colors={
+                            listIndex === index
+                              ? ['#BAF2E2', '#B8D1FC']
+                              : [
+                                  'rgba(234, 247, 252, 1)',
+                                  'rgba(234, 247, 252, 1)',
+                                ]
+                          }
+                          start={{x: 0, y: 0}}
+                          end={{x: 1, y: 0}}
+                          style={[
+                            tw`w-33 h-23 mr-2 rounded-2xl`,
+                            {
+                              marginLeft: -5,
+                              // height: 150,
+                              // width: 200,
+                              // borderRadius: 20,
+                            },
+                          ]}>
+                          <TouchableOpacity
+                            onPress={() => {
+                              setListIndex(index);
+
+                              setImg(item);
+                            }}
+                            style={[
+                              tw` w-30 h-20 rounded-2xl overflow-hidden `,
+                              {
+                                // borderColor: listIndex === index ? 'black' : '',
+                                // borderWidth: listIndex === index ? 5 : 0,
+                                margin: 5,
+                              },
+                            ]}>
+                            <ImageBackground
+                              style={tw` w-30 h-20 rounded-2xl`}
+                              source={item.img}
+                            />
+                          </TouchableOpacity>
+                        </LinearGradient>
                       );
                     }}
                   />
-
-                  <TouchableOpacity>
+                  <TouchableOpacity
+                    //next
+                    onPress={() => {
+                      if (flatListScrollIndex < image.length - 1) {
+                        scrollRef.current?.scrollToIndex({
+                          animated: true,
+                          index: flatListScrollIndex + 1,
+                        });
+                        setFLatListScrollIndex(prev => prev + 1);
+                      }
+                    }}>
                     <Icon name="right" size={25} />
                   </TouchableOpacity>
                 </View>
@@ -208,27 +206,27 @@ const YourCard = () => {
             </>
           )}
         </View>
+        <View style={tw`flex-row items-center justify-between px-2 mb-4 mt-5`}>
+          <Btn
+            left
+            onPress={() => navigation.goBack()}
+            title="Back"
+            style={{
+              width: '45%',
+              borderColor: 'grey',
+            }}
+          />
+          <Btn
+            right
+            title="Continue"
+            onPress={() => navigation.navigate('Preview', {img: img})}
+            style={{
+              width: '45%',
+              borderColor: 'grey',
+            }}
+          />
+        </View>
       </ScrollView>
-      <View style={tw`flex-row items-center justify-between px-2 mb-4 mt-5`}>
-        <Btn
-          left
-          onPress={() => navigation.goBack()}
-          title="Back"
-          style={{
-            width: '45%',
-            borderColor: 'grey',
-          }}
-        />
-        <Btn
-          right
-          title="Continue"
-          onPress={() => navigation.navigate('Preview')}
-          style={{
-            width: '45%',
-            borderColor: 'grey',
-          }}
-        />
-      </View>
     </SafeAreaView>
   );
 };

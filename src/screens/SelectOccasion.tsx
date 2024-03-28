@@ -4,8 +4,8 @@ import tw from 'twrnc';
 import Input from '../components/Input';
 import Btn from '../components/Btn';
 import {useNavigation} from '@react-navigation/native';
-import {Chip} from 'react-native-ui-lib';
 import {Alert} from 'react-native';
+import Chip from '../components/Chip';
 const SelectOccasion = () => {
   const navigation = useNavigation();
   const [condition, setCondition] = useState('celebration');
@@ -31,123 +31,22 @@ const SelectOccasion = () => {
         <Text style={tw`text-[8] text-black font-bold text-center`}>
           SELECT OCCASION
         </Text>
+      </View>
+      <View style={tw`gap-3 items-center`}>
         <View>
           <View style={tw`w-[100%] gap-3 mt-5 flex-row`}>
             <Chip
-              // id={key}
-              style={{
-                padding: 10,
-                // paddingVertical: 10,
-                borderRadius: 20,
-                width: 120,
-                backgroundColor: '#F5F5F5',
-                borderWidth: 1,
-                borderColor: 'grey',
-              }}
-              // leftElement={
-              //   <Image
-              //     style={{width: 30, height: 30}}
-              //     source={value.image}
-              //   />
-              // }
-              label={'celebration'}
-              // onPress={() =>
-              //   setPublishListing((prev: any) => ({
-              //     ...prev,
-              //     [k]: {
-              //       ...v,
-              //       ...{
-              //         [key]: {...value, selected: !value.selected},
-              //       },
-              //     },
-              //   }))
-              // }
+              onPress={() => setCondition('celebration')}
+              label="celebration"
             />
-            <Chip
-              // id={key}
-              style={{
-                padding: 10,
-                // paddingVertical: 10,
-                borderRadius: 20,
-                width: 95,
-                backgroundColor: '#F5F5F5',
-                borderWidth: 1,
-                borderColor: 'grey',
-              }}
-              // leftElement={
-              //   <Image
-              //     style={{width: 30, height: 30}}
-              //     source={value.image}
-              //   />
-              // }
-              label={'Festival'}
-              // onPress={() =>
-              //   setPublishListing((prev: any) => ({
-              //     ...prev,
-              //     [k]: {
-              //       ...v,
-              //       ...{
-              //         [key]: {...value, selected: !value.selected},
-              //       },
-              //     },
-              //   }))
-              // }
-              onPress={() => setCondition('Festival')}
-            />
-            <Chip
-              // id={key}
-              style={{
-                padding: 10,
-                // paddingVertical: 10,
-                borderRadius: 20,
-                width: 100,
-                backgroundColor: '#F5F5F5',
-                borderWidth: 1,
-                borderColor: 'grey',
-              }}
-              // leftElement={
-              //   <Image
-              //     style={{width: 30, height: 30}}
-              //     source={value.image}
-              //   />
-              // }
-              label={'Holidays'}
-              onPress={() => setCondition('Holidays')}
-              // onPress={() => setCondition('Festival')}
-            />
+            <Chip onPress={() => setCondition('Festival')} label="Festival" />
+            <Chip onPress={() => setCondition('Holidays')} label="Holidays" />
           </View>
+        </View>
+        <View>
           <Chip
-            // id={key}
-            style={{
-              padding: 10,
-              // paddingVertical: 10,
-              borderRadius: 20,
-              width: 200,
-              marginTop: 10,
-              alignSelf: 'center',
-              backgroundColor: '#F5F5F5',
-              borderWidth: 1,
-              borderColor: 'grey',
-            }}
-            // leftElement={
-            //   <Image
-            //     style={{width: 30, height: 30}}
-            //     source={value.image}
-            //   />
-            // }
-            label={'Create Your Own Occasion'}
             onPress={() => setCondition('Create Your Own Occasion')}
-            // onPress={() =>
-            //   setPublishListing((prev: any) => ({
-            //     ...prev,
-            //     [k]: {
-            //       ...v,
-            //       ...{
-            //         [key]: {...value, selected: !value.selected},
-            //       },
-            //     },
-            //   }))
-            // }
+            label="Create Your Own Occasion"
           />
         </View>
       </View>
@@ -160,170 +59,34 @@ const SelectOccasion = () => {
           <>
             <View style={tw`w-[100%] gap-3 mt-5 flex-row justify-center`}>
               <Chip
-                // id={key}
-                style={{
-                  padding: 10,
-                  // paddingVertical: 10,
-                  borderRadius: 20,
-                  width: 100,
-                  backgroundColor: '#F5F5F5',
-                  borderWidth: 1,
-                  borderColor: 'grey',
-                }}
-                // leftElement={
-                //   <Image
-                //     style={{width: 30, height: 30}}
-                //     source={value.image}
-                //   />
-                // }
-                label={'Birthday'}
-                onPress={() => Alert.alert('Hello')}
+                // onPress={() => setCondition('Create Your Own Occasion')}
+                label="Birthday"
               />
               <Chip
-                // id={key}
-                style={{
-                  padding: 10,
-                  // paddingVertical: 10,
-                  borderRadius: 20,
-                  width: 180,
-                  backgroundColor: '#F5F5F5',
-                  borderWidth: 1,
-                  borderColor: 'grey',
-                }}
-                // leftElement={
-                //   <Image
-                //     style={{width: 30, height: 30}}
-                //     source={value.image}
-                //   />
-                // }
-                label={'Fathers/Mother Days'}
-                // onPress={() =>
-                //   setPublishListing((prev: any) => ({
-                //     ...prev,
-                //     [k]: {
-                //       ...v,
-                //       ...{
-                //         [key]: {...value, selected: !value.selected},
-                //       },
-                //     },
-                //   }))
-                // }
+                // onPress={() => setCondition('Create Your Own Occasion')}
+                label="Fathers/Mother Days"
               />
             </View>
             <View style={tw`w-[100%] gap-3 mt-5 flex-row justify-center`}>
               <Chip
-                // id={key}
-                style={{
-                  padding: 10,
-                  // paddingVertical: 10,
-                  borderRadius: 20,
-                  width: 180,
-                  backgroundColor: '#F5F5F5',
-                  borderWidth: 1,
-                  borderColor: 'grey',
-                }}
-                // leftElement={
-                //   <Image
-                //     style={{width: 30, height: 30}}
-                //     source={value.image}
-                //   />
-                // }
-                label={'Wedding Anniversary'}
-                // onPress={() =>
-                //   setPublishListing((prev: any) => ({
-                //     ...prev,
-                //     [k]: {
-                //       ...v,
-                //       ...{
-                //         [key]: {...value, selected: !value.selected},
-                //       },
-                //     },
-                //   }))
-                // }
+                // onPress={() => setCondition('Create Your Own Occasion')}
+                label="Wedding Anniversary"
               />
               <Chip
-                // id={key}
-                style={{
-                  padding: 10,
-                  // paddingVertical: 10,
-                  borderRadius: 20,
-                  width: 120,
-                  backgroundColor: '#F5F5F5',
-                  borderWidth: 1,
-                  borderColor: 'grey',
-                }}
-                // leftElement={
-                //   <Image
-                //     style={{width: 30, height: 30}}
-                //     source={value.image}
-                //   />
-                // }
-                label={'Anniversary'}
-                // onPress={() =>
-                //   setPublishListing((prev: any) => ({
-                //     ...prev,
-                //     [k]: {
-                //       ...v,
-                //       ...{
-                //         [key]: {...value, selected: !value.selected},
-                //       },
-                //     },
-                //   }))
-                // }
+                // onPress={() => setCondition('Create Your Own Occasion')}
+                label="Anniversary"
               />
             </View>
           </>
         ) : condition === 'Festival' ? (
           <View style={tw`w-[100%] gap-3 mt-5 flex-row justify-center`}>
             <Chip
-              // id={key}
-              style={{
-                padding: 10,
-                // paddingVertical: 10,
-                borderRadius: 20,
-                width: 160,
-                backgroundColor: '#F5F5F5',
-                borderWidth: 1,
-                borderColor: 'grey',
-              }}
-              // leftElement={
-              //   <Image
-              //     style={{width: 30, height: 30}}
-              //     source={value.image}
-              //   />
-              // }
-              label={'All Religions Above'}
-              onPress={() => Alert.alert('Hello')}
+              // onPress={() => setCondition('Create Your Own Occasion')}
+              label="All Religions Above"
             />
             <Chip
-              // id={key}
-              style={{
-                padding: 10,
-                // paddingVertical: 10,
-                borderRadius: 20,
-                width: 190,
-                backgroundColor: '#F5F5F5',
-                borderWidth: 1,
-                borderColor: 'grey',
-              }}
-              // leftElement={
-              //   <Image
-              //     style={{width: 30, height: 30}}
-              //     source={value.image}
-              //   />
-              // }
-              label={'Chinese New Year 2024'}
-              // onPress={() =>
-              //   setPublishListing((prev: any) => ({
-              //     ...prev,
-              //     [k]: {
-              //       ...v,
-              //       ...{
-              //         [key]: {...value, selected: !value.selected},
-              //       },
-              //     },
-              //   }))
-              // }
+              // onPress={() => setCondition('Create Your Own Occasion')}
+              label="Chinese New Year 2024"
             />
           </View>
         ) : condition === 'Holidays' ? (
