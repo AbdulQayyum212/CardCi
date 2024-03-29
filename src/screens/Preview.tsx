@@ -26,7 +26,7 @@ import Animated, {
 import LinearGradient from 'react-native-linear-gradient';
 const Preview = ({route}) => {
   console.log('props', route);
-
+  const [msg, setMsg] = useState('');
   const navigation = useNavigation();
   const rotationF = useSharedValue(0);
   const rotationB = useSharedValue(180);
@@ -62,71 +62,144 @@ const Preview = ({route}) => {
 
   return (
     <SafeAreaView
-      style={[
-        tw`flex-1  justify-between`,
-        {backgroundColor: 'rgba(234, 247, 252, 1)'},
-      ]}>
-      {/* <ScrollView showsVerticalScrollIndicator={false}> */}
-      <View style={tw`  items-center  w-full justify-center px-5 `}>
-        <Image
-          style={{
-            marginTop: 50,
-            width: 100,
-            height: 100,
-            marginBottom: 10,
-            // marginLeft: 20,
-          }}
-          resizeMode="contain"
-          source={require('../../assets/cardci-Logo.png')}
-        />
+      style={[tw`flex-1 `, {backgroundColor: 'rgba(234, 247, 252, 1)'}]}>
+      <ScrollView
+        contentContainerStyle={{flexGrow: 1}}
+        showsVerticalScrollIndicator={false}>
+        <View style={tw`flex-1 items-center  w-full justify-center px-5 `}>
+          <Image
+            style={{
+              marginTop: 50,
+              width: 100,
+              height: 100,
+              marginBottom: 10,
+              // marginLeft: 20,
+            }}
+            resizeMode="contain"
+            source={require('../../assets/cardci-Logo.png')}
+          />
 
-        <Text style={tw`text-[8] text-black font-bold text-center`}>
-          Preview
-        </Text>
-        <View style={tw`w-[100%] gap-3 mt-1  justify-center p-5`}>
-          {/* <View style={tw` w-full h-50 rounded-2xl overflow-hidden`}>
+          <Text style={tw`text-[8] text-black font-bold text-center`}>
+            Preview
+          </Text>
+          <View style={tw`w-[100%] gap-3 flex-1  justify-center p-5`}>
+            {/* <View style={tw` w-full h-50 rounded-2xl overflow-hidden`}>
               <ImageBackground
                 style={tw` w-full h-50 rounded-2xl`}
                 source={require('../../assets/image.png')}
               />
             </View> */}
-        </View>
-        <Animated.View
-          style={[
-            frontStyle,
-            tw`w-full rounded-2xl overflow-hidden h-50`,
-            styles.card,
-            // {
-            //   backgroundColor: 'red',
-            // },
-          ]}>
-          <ImageBackground
-            style={tw` w-full h-50 rounded-2xl`}
-            source={route?.params?.img?.img}
-          />
-        </Animated.View>
-        <Animated.View
-          style={[
-            backStyle,
-            tw`w-full rounded-2xl overflow-hidden h-50`,
-            styles.card,
-            // {
-            //   backgroundColor: 'blue',
-            // },
-          ]}>
-          <LinearGradient
-            colors={['#BAEDE5', '#B8D5F9']}
+          </View>
+          <Animated.View
             style={[
-              tw`w-full rounded-2xl overflow-hidden h-50 justify-center items-center p-5`,
+              frontStyle,
+              tw`w-full rounded-2xl overflow-hidden h-50`,
+              styles.card,
+              // {
+              //   backgroundColor: 'red',
+              // },
             ]}>
-            <Text style={tw`text-center text-2xl`}>
-              In your eyes, I found the universe I've always longed for.
-            </Text>
-          </LinearGradient>
-        </Animated.View>
-      </View>
-      {/* </ScrollView> */}
-      <View style={tw`flex-row items-center justify-between px-2 mb-4 mt-5`}>
+            <ImageBackground
+              style={tw` w-full h-50 rounded-2xl`}
+              source={route?.params?.img?.img}
+            />
+          </Animated.View>
+          <Animated.View
+            style={[
+              backStyle,
+              tw`w-full rounded-2xl overflow-hidden h-50`,
+              styles.card,
+              // {
+              //   backgroundColor: 'blue',
+              // },
+            ]}>
+            <LinearGradient
+              colors={['#BAEDE5', '#B8D5F9']}
+              style={[
+                tw`w-full rounded-2xl overflow-hidden h-50 justify-center items-center p-5`,
+              ]}>
+              <Text
+                style={[
+                  {fontFamily: 'Italianno-Regular'},
+                  tw`text-center text-2xl`,
+                ]}>
+                {msg
+                  ? msg
+                  : "In your eyes, I found the universe I've always longed for."}
+              </Text>
+            </LinearGradient>
+          </Animated.View>
+          <Animated.View
+            style={[
+              backStyle,
+              tw`w-full rounded-2xl overflow-hidden  p-2 gap-2 mb-2`,
+              styles.card2,
+            ]}>
+            {msg && (
+              <>
+                <View
+                  style={[
+                    tw`flex-row items-center justify-center gap-3 `,
+                    {paddingHorizontal: 20},
+                  ]}>
+                  <View style={tw`p-2 border border-red-600 rounded-lg`}>
+                    <Text
+                      style={[
+                        // tw`font-[Kristi-Regular]`,
+                        {
+                          fontFamily: 'Italianno-Regular',
+                        },
+                      ]}>
+                      In your eyes
+                    </Text>
+                  </View>
+                  <View style={tw`p-2 border border-red-600 rounded-lg`}>
+                    <Text
+                      style={{
+                        fontFamily: 'JollyLodger-Regular',
+                      }}>
+                      In your eyes,
+                    </Text>
+                  </View>
+                  <View style={tw`p-2 border border-red-600 rounded-lg`}>
+                    <Text
+                      style={{
+                        fontFamily: 'JustMeAgainDownHere-Regular',
+                      }}>
+                      In your eyes,
+                    </Text>
+                  </View>
+                </View>
+                <View
+                  style={[
+                    tw`flex-row items-center justify-center gap-3 `,
+                    {paddingHorizontal: 20},
+                  ]}>
+                  <View style={tw`p-2 border border-red-600 rounded-lg`}>
+                    <Text
+                      style={[
+                        tw`font-semibold`,
+                        {
+                          fontFamily: 'Kristi-Regular',
+                        },
+                      ]}>
+                      In your eyes,
+                    </Text>
+                  </View>
+                  <View style={tw`p-2 border border-red-600 rounded-lg`}>
+                    <Text>In your eyes,</Text>
+                  </View>
+                </View>
+              </>
+            )}
+            <Input
+              onChangeText={(text: string) => setMsg(text)}
+              placeholder="Text"
+            />
+          </Animated.View>
+        </View>
+      </ScrollView>
+      <View style={tw` flex-row items-center justify-between px-2 mb-4 mt-5`}>
         <Btn
           left
           //   onPress={() => navigation.goBack()}
@@ -172,6 +245,14 @@ const styles = StyleSheet.create({
   card: {
     position: 'absolute',
     top: 220,
+    left: 20,
+    // width: '100%',
+    // height: '100%',
+    backfaceVisibility: 'hidden',
+  },
+  card2: {
+    position: 'absolute',
+    top: 430,
     left: 20,
     // width: '100%',
     // height: '100%',

@@ -10,8 +10,13 @@ import HomeHeader from '../components/HomeHeader';
 import tw from 'twrnc';
 import {useNavigation} from '@react-navigation/native';
 import LinearGradient from 'react-native-linear-gradient';
+import {selectCardState} from '../stores/store';
+import {useSelector} from 'react-redux';
 const MyContact = () => {
   const navigation = useNavigation();
+  const {AddCard} = useSelector(selectCardState);
+  console.log('AddCard', AddCard);
+
   return (
     <SafeAreaView
       style={[tw`bg-[ flex-1`, {backgroundColor: 'rgba(234, 247, 252, 1)'}]}>
@@ -28,7 +33,10 @@ const MyContact = () => {
             resizeMode="cover"
             source={require('../../assets/cardImage.jpeg')}>
             <Text style={[tw`text-black font-bold text-[6]`]}>
-              Add a New Contact
+              Name:Waqar Khan
+            </Text>
+            <Text style={[tw`text-black font-bold text-[6]`]}>
+              Relationship:Friend
             </Text>
           </ImageBackground>
         </TouchableOpacity>

@@ -1,12 +1,15 @@
 import {View, Text, SafeAreaView, Image} from 'react-native';
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import tw from 'twrnc';
 import Input from '../components/Input';
 import Btn from '../components/Btn';
 import {useNavigation} from '@react-navigation/native';
-
+import {useToast} from 'react-native-toast-notifications';
+import {ToastError, ToastSuccess} from '../Config/Constants';
+import Toast from 'react-native-toast-message';
 export default function RecipientName() {
   const navigation = useNavigation();
+  const [name, setName] = useState('');
   return (
     <SafeAreaView
       style={[
@@ -29,7 +32,10 @@ export default function RecipientName() {
           What’s Your Recipient’s Name?
         </Text>
         <View style={tw`p-[20] w-[100%] `}>
-          <Input placeholder="Full Name" />
+          <Input
+            onChangeText={(text: string) => setName(text)}
+            placeholder="Full Name"
+          />
         </View>
       </View>
 
@@ -46,7 +52,11 @@ export default function RecipientName() {
         <Btn
           right
           title="Continue"
-          onPress={() => navigation.navigate('RelationShip')}
+          onPress={() => {
+            if (name === '')
+              return Toast.show(ToastError('Full Name is Required'));
+            navigation.navigate('RelationShip', {name: name});
+          }}
           style={{
             width: '45%',
             borderColor: 'grey',

@@ -52,6 +52,7 @@ export default function HomeHeader({
 const style = StyleSheet.create({
   header: {
     padding: 10,
+    backgroundColor: 'rgba(234, 247, 252, 1)',
     // flex: 1,
     width: '100%',
     flexDirection: 'row',

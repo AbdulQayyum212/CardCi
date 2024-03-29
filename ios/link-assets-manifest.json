@@ -1,0 +1,21 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/Italianno-Regular.ttf",
+      "sha1": "1d0fca4d186f74e1567d7aef33998fea1d837284"
+    },
+    {
+      "path": "assets/fonts/JollyLodger-Regular.ttf",
+      "sha1": "e9dc9c8c60aa4681c0811277392e531299231c18"
+    },
+    {
+      "path": "assets/fonts/JustMeAgainDownHere-Regular.ttf",
+      "sha1": "5818305f447ce1a73efd6259820e16d31d540ff1"
+    },
+    {
+      "path": "assets/fonts/Kristi-Regular.ttf",
+      "sha1": "5ed14506c4069dbdfbabb7f997e97206debcfba0"
+    }
+  ]
+}

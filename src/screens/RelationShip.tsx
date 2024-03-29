@@ -1,5 +1,5 @@
 import {View, Text, SafeAreaView, Image, StyleSheet} from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 import tw from 'twrnc';
 import Input from '../components/Input';
 import Btn from '../components/Btn';
@@ -7,23 +7,20 @@ import {useNavigation} from '@react-navigation/native';
 import Feather from 'react-native-vector-icons/Feather';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import SelectDropdown from 'react-native-select-dropdown';
-const RelationShip = () => {
+import Toast from 'react-native-toast-message';
+import {ToastError} from '../Config/Constants';
+const RelationShip = ({route}) => {
+  const [data, setData] = useState({
+    name: route?.params?.name,
+    RelationShip: '',
+  });
   const navigation = useNavigation();
   const emojisWithIcons = [
-    {title: 'happy', icon: 'emoticon-happy-outline'},
-    {title: 'cool', icon: 'emoticon-cool-outline'},
-    {title: 'lol', icon: 'emoticon-lol-outline'},
-    {title: 'sad', icon: 'emoticon-sad-outline'},
-    {title: 'cry', icon: 'emoticon-cry-outline'},
-    {title: 'angry', icon: 'emoticon-angry-outline'},
-    {title: 'confused', icon: 'emoticon-confused-outline'},
-    {title: 'excited', icon: 'emoticon-excited-outline'},
-    {title: 'kiss', icon: 'emoticon-kiss-outline'},
-    {title: 'devil', icon: 'emoticon-devil-outline'},
-    {title: 'dead', icon: 'emoticon-dead-outline'},
-    {title: 'wink', icon: 'emoticon-wink-outline'},
-    {title: 'sick', icon: 'emoticon-sick-outline'},
-    {title: 'frown', icon: 'emoticon-frown-outline'},
+    {title: 'Friend', icon: 'emoticon-happy-outline'},
+    {title: 'Sister', icon: 'emoticon-cool-outline'},
+    {title: 'Brother', icon: 'emoticon-lol-outline'},
+    {title: 'Father', icon: 'emoticon-sad-outline'},
+    {title: 'Mother', icon: 'emoticon-cry-outline'},
   ];
   return (
     <SafeAreaView
@@ -52,6 +49,10 @@ const RelationShip = () => {
         <SelectDropdown
           data={emojisWithIcons}
           onSelect={(selectedItem, index) => {
+            setData((prev: any) => ({
+              ...prev,
+              RelationShip: selectedItem.title,
+            }));
             console.log(selectedItem, index);
           }}
           renderButton={(selectedItem, isOpened) => {
@@ -77,7 +78,7 @@ const RelationShip = () => {
                   ...styles.dropdownItemStyle,
                   ...(isSelected && {backgroundColor: '#D2D9DF'}),
                 }}>
-                <Icon name={item.icon} style={styles.dropdownItemIconStyle} />
+                {/* <Icon name={item.icon} style={styles.dropdownItemIconStyle} /> */}
                 <Text style={styles.dropdownItemTxtStyle}>{item.title}</Text>
               </View>
             );
@@ -98,7 +99,12 @@ const RelationShip = () => {
           }}
         />
         <Btn
-          onPress={() => navigation.navigate('PersonLike')}
+          // onPress={() => console.log(data)}
+          onPress={() => {
+            if (data.RelationShip === '')
+              return Toast.show(ToastError('Full Name is Required'));
+            navigation.navigate('PersonLike', {data: data});
+          }}
           right
           title="Continue"
           style={{

@@ -14,6 +14,10 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-cardci-cardciTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-cardci-cardciTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		45945FEF65464E359C472B93 /* Italianno-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B15BCD1DEB3B4EB1B62AC474 /* Italianno-Regular.ttf */; };
+		21B942B8D78D49D89480791A /* JollyLodger-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 259C8F89C0B341CC931B6C7D /* JollyLodger-Regular.ttf */; };
+		4631E13FD699402EBDF6A4B1 /* JustMeAgainDownHere-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5CC3A133305E4FF28116E3DC /* JustMeAgainDownHere-Regular.ttf */; };
+		85277BF323B846DFA7D88285 /* Kristi-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8472CA09FD5544D9811E5963 /* Kristi-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +67,10 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = cardci/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-cardci-cardciTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cardci-cardciTests.release.xcconfig"; path = "Target Support Files/Pods-cardci-cardciTests/Pods-cardci-cardciTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		B15BCD1DEB3B4EB1B62AC474 /* Italianno-Regular.ttf */ = {isa = PBXFileReference; name = "Italianno-Regular.ttf"; path = "../assets/fonts/Italianno-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		259C8F89C0B341CC931B6C7D /* JollyLodger-Regular.ttf */ = {isa = PBXFileReference; name = "JollyLodger-Regular.ttf"; path = "../assets/fonts/JollyLodger-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5CC3A133305E4FF28116E3DC /* JustMeAgainDownHere-Regular.ttf */ = {isa = PBXFileReference; name = "JustMeAgainDownHere-Regular.ttf"; path = "../assets/fonts/JustMeAgainDownHere-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8472CA09FD5544D9811E5963 /* Kristi-Regular.ttf */ = {isa = PBXFileReference; name = "Kristi-Regular.ttf"; path = "../assets/fonts/Kristi-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +176,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				E733C9584993453F803C9F0E /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -193,6 +202,18 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		E733C9584993453F803C9F0E /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				B15BCD1DEB3B4EB1B62AC474 /* Italianno-Regular.ttf */,
+				259C8F89C0B341CC931B6C7D /* JollyLodger-Regular.ttf */,
+				5CC3A133305E4FF28116E3DC /* JustMeAgainDownHere-Regular.ttf */,
+				8472CA09FD5544D9811E5963 /* Kristi-Regular.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -289,6 +310,10 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				45945FEF65464E359C472B93 /* Italianno-Regular.ttf in Resources */,
+				21B942B8D78D49D89480791A /* JollyLodger-Regular.ttf in Resources */,
+				4631E13FD699402EBDF6A4B1 /* JustMeAgainDownHere-Regular.ttf in Resources */,
+				85277BF323B846DFA7D88285 /* Kristi-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
