@@ -25,6 +25,7 @@ import Animated, {
 } from 'react-native-reanimated';
 import LinearGradient from 'react-native-linear-gradient';
 const Preview = ({route}) => {
+  const [fontFamily ,setFontFamily] =useState('')
   console.log('props', route);
   const [msg, setMsg] = useState('');
   const navigation = useNavigation();
@@ -120,7 +121,7 @@ const Preview = ({route}) => {
               ]}>
               <Text
                 style={[
-                  {fontFamily: 'Italianno-Regular'},
+                  {fontFamily: fontFamily},
                   tw`text-center text-2xl`,
                 ]}>
                 {msg
@@ -142,7 +143,7 @@ const Preview = ({route}) => {
                     tw`flex-row items-center justify-center gap-3 `,
                     {paddingHorizontal: 20},
                   ]}>
-                  <View style={tw`p-2 border border-red-600 rounded-lg`}>
+                  <TouchableOpacity onPress={()=> setFontFamily('Italianno-Regular')}  style={tw`p-2 border border-red-600 rounded-lg`}>
                     <Text
                       style={[
                         // tw`font-[Kristi-Regular]`,
@@ -152,7 +153,7 @@ const Preview = ({route}) => {
                       ]}>
                       In your eyes
                     </Text>
-                  </View>
+                  </TouchableOpacity>
                   <View style={tw`p-2 border border-red-600 rounded-lg`}>
                     <Text
                       style={{
@@ -175,7 +176,7 @@ const Preview = ({route}) => {
                     tw`flex-row items-center justify-center gap-3 `,
                     {paddingHorizontal: 20},
                   ]}>
-                  <View style={tw`p-2 border border-red-600 rounded-lg`}>
+                  <TouchableOpacity onPress={()=> setFontFamily('Kristi-Regular')} style={tw`p-2 border border-red-600 rounded-lg`}>
                     <Text
                       style={[
                         tw`font-semibold`,
@@ -185,7 +186,7 @@ const Preview = ({route}) => {
                       ]}>
                       In your eyes,
                     </Text>
-                  </View>
+                  </TouchableOpacity>
                   <View style={tw`p-2 border border-red-600 rounded-lg`}>
                     <Text>In your eyes,</Text>
                   </View>

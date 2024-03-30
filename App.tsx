@@ -6,6 +6,7 @@ import Toast, {ErrorToast} from 'react-native-toast-message';
 import {Provider} from 'react-redux';
 import {PersistGate} from 'redux-persist/integration/react';
 import {persistor, store} from './src/stores/store';
+import YourCard from './src/screens/YourCard';
 // import { Provider } from 'react-redux';
 
 const App = () => {

@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
   FlatList,
 } from 'react-native';
-import React, {useRef, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import tw from 'twrnc';
 import Input from '../components/Input';
 import Btn from '../components/Btn';
@@ -22,6 +22,7 @@ const YourCard = () => {
   const [condition, setCondition] = useState('Choose a Template');
   const [flatListScrollIndex, setFLatListScrollIndex] = useState(0);
   const [img, setImg] = useState('');
+  const [selectedPlaceId, setSelectedPlaceId] = useState<number>(0);
   const [listIndex, setListIndex] = useState<number>();
   const image = [
     {img: require('../../assets/image.png'), id: 1},
@@ -38,6 +39,7 @@ const YourCard = () => {
     {img: require('../../assets/img.png'), id: 12},
     {img: require('../../assets/image.png'), id: 13},
   ];
+
   const scrollRef = useRef<FlatList>(null);
   console.log('flatListScrollIndex', flatListScrollIndex);
 
@@ -67,10 +69,18 @@ const YourCard = () => {
           <View>
             <View style={tw`w-[100%] gap-3 mt-5 flex-row`}>
               <Chip
+               color={condition === 'Choose a Template'?['#BAF2E2', '#B8D1FC']:[
+                'rgba(234, 247, 252, 1)',
+                'rgba(234, 247, 252, 1)',
+              ]}
                 onPress={() => setCondition('Choose a Template')}
                 label="Choose a Template"
               />
               <Chip
+               color={condition === 'Upload Image'?['#BAF2E2', '#B8D1FC']:[
+                'rgba(234, 247, 252, 1)',
+                'rgba(234, 247, 252, 1)',
+              ]}
                 onPress={() => setCondition('Upload Image')}
                 label="Upload Image"
               />
@@ -79,7 +89,11 @@ const YourCard = () => {
           <View>
             <View style={tw`w-[100%] gap-3 mt-3 flex-row`}>
               <Chip
-                onPress={() => setCondition('Upload Image')}
+               color={condition === 'Text To Image (Ai Prompt)'?['#BAF2E2', '#B8D1FC']:[
+                'rgba(234, 247, 252, 1)',
+                'rgba(234, 247, 252, 1)',
+              ]}
+                onPress={() => setCondition('Text To Image (Ai Prompt)')}
                 label="Text To Image (Ai Prompt)"
               />
             </View>
@@ -143,6 +157,10 @@ const YourCard = () => {
                           <TouchableOpacity
                             onPress={() => {
                               setListIndex(index);
+                              scrollRef.current?.scrollToIndex({
+                                animated: true,
+                                index: index,
+                              });
 
                               setImg(item);
                             }}
