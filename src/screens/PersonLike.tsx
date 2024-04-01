@@ -7,8 +7,12 @@ import {useNavigation} from '@react-navigation/native';
 import Toast from 'react-native-toast-message';
 import {ToastError} from '../Config/Constants';
 import {setProperties} from '../stores/actions/AddCardAction';
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
+import BackBtn from '../components/BackBtn';
+import {selectCardState} from '../stores/store';
 const PersonLike = ({route}) => {
+  const {AddCard} = useSelector(selectCardState);
+  console.log('AddCard', AddCard);
   const dispatch = useDispatch();
   const [data, setData] = useState<{
     name: string;
@@ -40,9 +44,10 @@ const PersonLike = ({route}) => {
       ]}>
       <ScrollView>
         <View style={tw` flex-1 items-center  w-full justify-center px-5 `}>
+          <BackBtn />
           <Image
             style={{
-              marginTop: 50,
+              marginTop: 20,
               width: 100,
               height: 100,
               marginBottom: 10,
@@ -129,7 +134,7 @@ const PersonLike = ({route}) => {
                 return Toast.show(ToastError('Recipients Address is Required'));
               if (data.recipientsNumber === 0)
                 return Toast.show(ToastError('Recipients Number is Required'));
-              dispatch(setProperties(data));
+              dispatch(setProperties([...AddCard, data]));
               navigation.navigate('Home');
               console.log('Data', data);
             }}

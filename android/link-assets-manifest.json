@@ -2,6 +2,14 @@
   "migIndex": 1,
   "data": [
     {
+      "path": "assets/fonts/AmaticSC-Regular.ttf",
+      "sha1": "9aa9f1b9ddbd8340e415b538c513ee2ab92ee2e2"
+    },
+    {
+      "path": "assets/fonts/IndieFlower-Regular.ttf",
+      "sha1": "dab8ff786dd1c6a3e8fa8a54d4d59cf9a703efe1"
+    },
+    {
       "path": "assets/fonts/Italianno-Regular.ttf",
       "sha1": "1d0fca4d186f74e1567d7aef33998fea1d837284"
     },
@@ -16,6 +24,14 @@
     {
       "path": "assets/fonts/Kristi-Regular.ttf",
       "sha1": "5ed14506c4069dbdfbabb7f997e97206debcfba0"
+    },
+    {
+      "path": "assets/fonts/Pacifico-Regular.ttf",
+      "sha1": "baca1fca7fe74b61cb33aa0da48ec1a3a77bcf49"
+    },
+    {
+      "path": "assets/fonts/RubikScribble-Regular.ttf",
+      "sha1": "779677a0eaf01277429ffade0d31889647bd355b"
     }
   ]
 }

@@ -12,12 +12,16 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		21B942B8D78D49D89480791A /* JollyLodger-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 259C8F89C0B341CC931B6C7D /* JollyLodger-Regular.ttf */; };
+		45945FEF65464E359C472B93 /* Italianno-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B15BCD1DEB3B4EB1B62AC474 /* Italianno-Regular.ttf */; };
+		4631E13FD699402EBDF6A4B1 /* JustMeAgainDownHere-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5CC3A133305E4FF28116E3DC /* JustMeAgainDownHere-Regular.ttf */; };
 		7699B88040F8A987B510C191 /* libPods-cardci-cardciTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-cardci-cardciTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		45945FEF65464E359C472B93 /* Italianno-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B15BCD1DEB3B4EB1B62AC474 /* Italianno-Regular.ttf */; };
-		21B942B8D78D49D89480791A /* JollyLodger-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 259C8F89C0B341CC931B6C7D /* JollyLodger-Regular.ttf */; };
-		4631E13FD699402EBDF6A4B1 /* JustMeAgainDownHere-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5CC3A133305E4FF28116E3DC /* JustMeAgainDownHere-Regular.ttf */; };
 		85277BF323B846DFA7D88285 /* Kristi-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8472CA09FD5544D9811E5963 /* Kristi-Regular.ttf */; };
+		CF6D16C4361941A3818DCAE7 /* RubikScribble-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BEA9E82BE15846E7BD7BE701 /* RubikScribble-Regular.ttf */; };
+		6641F47F7AEF42F6B2536D27 /* IndieFlower-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 63C6A9FFD3A2431C8D97DDE1 /* IndieFlower-Regular.ttf */; };
+		3591EED1700D46C2A314C0CD /* Pacifico-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DD0A9E6B252545608C1B96CF /* Pacifico-Regular.ttf */; };
+		19BF7870A8F049D6B20697E9 /* AmaticSC-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CB122C1C39F4420798641604 /* AmaticSC-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +45,7 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = cardci/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = cardci/main.m; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-cardci-cardciTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-cardci-cardciTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		259C8F89C0B341CC931B6C7D /* JollyLodger-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "JollyLodger-Regular.ttf"; path = "../assets/fonts/JollyLodger-Regular.ttf"; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-cardci.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cardci.debug.xcconfig"; path = "Target Support Files/Pods-cardci/Pods-cardci.debug.xcconfig"; sourceTree = "<group>"; };
 		52E267902BB3493A005F5C2B /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
 		52E267912BB3493A005F5C2B /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ionicons.ttf; sourceTree = "<group>"; };
@@ -63,14 +68,17 @@
 		52E267A22BB3493A005F5C2B /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome5_Brands.ttf; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-cardci.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cardci.release.xcconfig"; path = "Target Support Files/Pods-cardci/Pods-cardci.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-cardci-cardciTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cardci-cardciTests.debug.xcconfig"; path = "Target Support Files/Pods-cardci-cardciTests/Pods-cardci-cardciTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5CC3A133305E4FF28116E3DC /* JustMeAgainDownHere-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "JustMeAgainDownHere-Regular.ttf"; path = "../assets/fonts/JustMeAgainDownHere-Regular.ttf"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-cardci.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-cardci.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = cardci/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8472CA09FD5544D9811E5963 /* Kristi-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Kristi-Regular.ttf"; path = "../assets/fonts/Kristi-Regular.ttf"; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-cardci-cardciTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cardci-cardciTests.release.xcconfig"; path = "Target Support Files/Pods-cardci-cardciTests/Pods-cardci-cardciTests.release.xcconfig"; sourceTree = "<group>"; };
+		B15BCD1DEB3B4EB1B62AC474 /* Italianno-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Italianno-Regular.ttf"; path = "../assets/fonts/Italianno-Regular.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		B15BCD1DEB3B4EB1B62AC474 /* Italianno-Regular.ttf */ = {isa = PBXFileReference; name = "Italianno-Regular.ttf"; path = "../assets/fonts/Italianno-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		259C8F89C0B341CC931B6C7D /* JollyLodger-Regular.ttf */ = {isa = PBXFileReference; name = "JollyLodger-Regular.ttf"; path = "../assets/fonts/JollyLodger-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		5CC3A133305E4FF28116E3DC /* JustMeAgainDownHere-Regular.ttf */ = {isa = PBXFileReference; name = "JustMeAgainDownHere-Regular.ttf"; path = "../assets/fonts/JustMeAgainDownHere-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		8472CA09FD5544D9811E5963 /* Kristi-Regular.ttf */ = {isa = PBXFileReference; name = "Kristi-Regular.ttf"; path = "../assets/fonts/Kristi-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		BEA9E82BE15846E7BD7BE701 /* RubikScribble-Regular.ttf */ = {isa = PBXFileReference; name = "RubikScribble-Regular.ttf"; path = "../assets/fonts/RubikScribble-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		63C6A9FFD3A2431C8D97DDE1 /* IndieFlower-Regular.ttf */ = {isa = PBXFileReference; name = "IndieFlower-Regular.ttf"; path = "../assets/fonts/IndieFlower-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		DD0A9E6B252545608C1B96CF /* Pacifico-Regular.ttf */ = {isa = PBXFileReference; name = "Pacifico-Regular.ttf"; path = "../assets/fonts/Pacifico-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		CB122C1C39F4420798641604 /* AmaticSC-Regular.ttf */ = {isa = PBXFileReference; name = "AmaticSC-Regular.ttf"; path = "../assets/fonts/AmaticSC-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,16 +212,20 @@
 			sourceTree = "<group>";
 		};
 		E733C9584993453F803C9F0E /* Resources */ = {
-			isa = "PBXGroup";
+			isa = PBXGroup;
 			children = (
 				B15BCD1DEB3B4EB1B62AC474 /* Italianno-Regular.ttf */,
 				259C8F89C0B341CC931B6C7D /* JollyLodger-Regular.ttf */,
 				5CC3A133305E4FF28116E3DC /* JustMeAgainDownHere-Regular.ttf */,
 				8472CA09FD5544D9811E5963 /* Kristi-Regular.ttf */,
+				BEA9E82BE15846E7BD7BE701 /* RubikScribble-Regular.ttf */,
+				63C6A9FFD3A2431C8D97DDE1 /* IndieFlower-Regular.ttf */,
+				DD0A9E6B252545608C1B96CF /* Pacifico-Regular.ttf */,
+				CB122C1C39F4420798641604 /* AmaticSC-Regular.ttf */,
 			);
 			name = Resources;
-			sourceTree = "<group>";
 			path = "";
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -314,6 +326,10 @@
 				21B942B8D78D49D89480791A /* JollyLodger-Regular.ttf in Resources */,
 				4631E13FD699402EBDF6A4B1 /* JustMeAgainDownHere-Regular.ttf in Resources */,
 				85277BF323B846DFA7D88285 /* Kristi-Regular.ttf in Resources */,
+				CF6D16C4361941A3818DCAE7 /* RubikScribble-Regular.ttf in Resources */,
+				6641F47F7AEF42F6B2536D27 /* IndieFlower-Regular.ttf in Resources */,
+				3591EED1700D46C2A314C0CD /* Pacifico-Regular.ttf in Resources */,
+				19BF7870A8F049D6B20697E9 /* AmaticSC-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

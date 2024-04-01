@@ -13,6 +13,7 @@ import Btn from '../components/Btn';
 import {useNavigation} from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {Calendar} from 'react-native-calendars';
+import BackBtn from '../components/BackBtn';
 const DeliveryDate = () => {
   const navigation = useNavigation();
   const [calendarOpen, setCalendarOpen] = useState(false);
@@ -25,9 +26,10 @@ const DeliveryDate = () => {
       ]}>
       <ScrollView>
         <View style={tw`flex-1 items-center  w-full justify-center px-5 `}>
+          <BackBtn />
           <Image
             style={{
-              marginTop: 50,
+              marginTop: 20,
               width: 100,
               height: 100,
               marginBottom: 10,
@@ -39,7 +41,6 @@ const DeliveryDate = () => {
           <Text style={tw`text-[8] text-black font-bold text-center`}>
             Choose Your Delivery date!
           </Text>
-
           <View style={tw`p-[20] w-[100%] `}>
             <View
               style={tw`bg-white border-4 w-{100%} rounded-3xl p-3 flex-row items-center justify-between `}>

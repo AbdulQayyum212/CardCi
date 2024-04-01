@@ -24,8 +24,9 @@ import Animated, {
   withTiming,
 } from 'react-native-reanimated';
 import LinearGradient from 'react-native-linear-gradient';
+import BackBtn from '../components/BackBtn';
 const Preview = ({route}) => {
-  const [fontFamily ,setFontFamily] =useState('')
+  const [fontFamily, setFontFamily] = useState('');
   console.log('props', route);
   const [msg, setMsg] = useState('');
   const navigation = useNavigation();
@@ -68,9 +69,10 @@ const Preview = ({route}) => {
         contentContainerStyle={{flexGrow: 1}}
         showsVerticalScrollIndicator={false}>
         <View style={tw`flex-1 items-center  w-full justify-center px-5 `}>
+          <BackBtn />
           <Image
             style={{
-              marginTop: 50,
+              marginTop: 20,
               width: 100,
               height: 100,
               marginBottom: 10,
@@ -120,10 +122,7 @@ const Preview = ({route}) => {
                 tw`w-full rounded-2xl overflow-hidden h-50 justify-center items-center p-5`,
               ]}>
               <Text
-                style={[
-                  {fontFamily: fontFamily},
-                  tw`text-center text-2xl`,
-                ]}>
+                style={[{fontFamily: fontFamily}, tw`text-center text-2xl`]}>
                 {msg
                   ? msg
                   : "In your eyes, I found the universe I've always longed for."}
@@ -143,7 +142,9 @@ const Preview = ({route}) => {
                     tw`flex-row items-center justify-center gap-3 `,
                     {paddingHorizontal: 20},
                   ]}>
-                  <TouchableOpacity onPress={()=> setFontFamily('Italianno-Regular')}  style={tw`p-2 border border-red-600 rounded-lg`}>
+                  <TouchableOpacity
+                    onPress={() => setFontFamily('Italianno-Regular')}
+                    style={tw`p-2 border border-red-600 rounded-lg`}>
                     <Text
                       style={[
                         // tw`font-[Kristi-Regular]`,
@@ -154,32 +155,37 @@ const Preview = ({route}) => {
                       In your eyes
                     </Text>
                   </TouchableOpacity>
-                  <View style={tw`p-2 border border-red-600 rounded-lg`}>
+                  <TouchableOpacity
+                    onPress={() => setFontFamily('RubikScribble-Regular')}
+                    style={tw`p-2 border border-red-600 rounded-lg`}>
                     <Text
                       style={{
-                        fontFamily: 'JollyLodger-Regular',
+                        fontFamily: 'RubikScribble-Regular',
                       }}>
                       In your eyes,
                     </Text>
-                  </View>
-                  <View style={tw`p-2 border border-red-600 rounded-lg`}>
+                  </TouchableOpacity>
+                  <TouchableOpacity
+                    onPress={() => setFontFamily('AmaticSC-Regular')}
+                    style={tw`p-2 border border-red-600 rounded-lg`}>
                     <Text
                       style={{
-                        fontFamily: 'JustMeAgainDownHere-Regular',
+                        fontFamily: 'AmaticSC-Regular',
                       }}>
                       In your eyes,
                     </Text>
-                  </View>
+                  </TouchableOpacity>
                 </View>
                 <View
                   style={[
                     tw`flex-row items-center justify-center gap-3 `,
                     {paddingHorizontal: 20},
                   ]}>
-                  <TouchableOpacity onPress={()=> setFontFamily('Kristi-Regular')} style={tw`p-2 border border-red-600 rounded-lg`}>
+                  <TouchableOpacity
+                    onPress={() => setFontFamily('Kristi-Regular')}
+                    style={tw`p-2 border border-red-600 rounded-lg`}>
                     <Text
                       style={[
-                        tw`font-semibold`,
                         {
                           fontFamily: 'Kristi-Regular',
                         },
@@ -187,9 +193,18 @@ const Preview = ({route}) => {
                       In your eyes,
                     </Text>
                   </TouchableOpacity>
-                  <View style={tw`p-2 border border-red-600 rounded-lg`}>
-                    <Text>In your eyes,</Text>
-                  </View>
+                  <TouchableOpacity
+                    onPress={() => setFontFamily('Pacifico-Regular')}
+                    style={tw`p-2 border border-red-600 rounded-lg`}>
+                    <Text
+                      style={[
+                        {
+                          fontFamily: 'Pacifico-Regular',
+                        },
+                      ]}>
+                      In your eyes,
+                    </Text>
+                  </TouchableOpacity>
                 </View>
               </>
             )}

@@ -16,12 +16,15 @@ import {useNavigation} from '@react-navigation/native';
 import {Alert} from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign';
 import LinearGradient from 'react-native-linear-gradient';
+import {Asset, launchImageLibrary} from 'react-native-image-picker';
 import Chip from '../components/Chip';
+import BackBtn from '../components/BackBtn';
 const YourCard = () => {
   const navigation = useNavigation();
   const [condition, setCondition] = useState('Choose a Template');
   const [flatListScrollIndex, setFLatListScrollIndex] = useState(0);
-  const [img, setImg] = useState('');
+  const [img, setImg] = useState<string>('');
+  const [uploadImg, setUploadImg] = useState('');
   const [selectedPlaceId, setSelectedPlaceId] = useState<number>(0);
   const [listIndex, setListIndex] = useState<number>();
   const image = [
@@ -39,7 +42,15 @@ const YourCard = () => {
     {img: require('../../assets/img.png'), id: 12},
     {img: require('../../assets/image.png'), id: 13},
   ];
-
+  const pickImg = async () => {
+    const res = await launchImageLibrary(
+      {mediaType: 'photo', selectionLimit: 5},
+      value => {
+        if (value.assets != undefined) setUploadImg(value?.assets[0]);
+      },
+    );
+    console.log('==================================== img', res);
+  };
   const scrollRef = useRef<FlatList>(null);
   console.log('flatListScrollIndex', flatListScrollIndex);
 
@@ -51,9 +62,10 @@ const YourCard = () => {
       ]}>
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={tw`  items-center  w-full justify-center px-5 `}>
+          <BackBtn />
           <Image
             style={{
-              marginTop: 50,
+              marginTop: 20,
               width: 100,
               height: 100,
               marginBottom: 10,
@@ -69,19 +81,24 @@ const YourCard = () => {
           <View>
             <View style={tw`w-[100%] gap-3 mt-5 flex-row`}>
               <Chip
-               color={condition === 'Choose a Template'?['#BAF2E2', '#B8D1FC']:[
-                'rgba(234, 247, 252, 1)',
-                'rgba(234, 247, 252, 1)',
-              ]}
+                color={
+                  condition === 'Choose a Template'
+                    ? ['#BAF2E2', '#B8D1FC']
+                    : ['rgba(234, 247, 252, 1)', 'rgba(234, 247, 252, 1)']
+                }
                 onPress={() => setCondition('Choose a Template')}
                 label="Choose a Template"
               />
               <Chip
-               color={condition === 'Upload Image'?['#BAF2E2', '#B8D1FC']:[
-                'rgba(234, 247, 252, 1)',
-                'rgba(234, 247, 252, 1)',
-              ]}
-                onPress={() => setCondition('Upload Image')}
+                color={
+                  condition === 'Upload Image'
+                    ? ['#BAF2E2', '#B8D1FC']
+                    : ['rgba(234, 247, 252, 1)', 'rgba(234, 247, 252, 1)']
+                }
+                onPress={() => {
+                  setUploadImg('');
+                  setCondition('Upload Image');
+                }}
                 label="Upload Image"
               />
             </View>
@@ -89,10 +106,11 @@ const YourCard = () => {
           <View>
             <View style={tw`w-[100%] gap-3 mt-3 flex-row`}>
               <Chip
-               color={condition === 'Text To Image (Ai Prompt)'?['#BAF2E2', '#B8D1FC']:[
-                'rgba(234, 247, 252, 1)',
-                'rgba(234, 247, 252, 1)',
-              ]}
+                color={
+                  condition === 'Text To Image (Ai Prompt)'
+                    ? ['#BAF2E2', '#B8D1FC']
+                    : ['rgba(234, 247, 252, 1)', 'rgba(234, 247, 252, 1)']
+                }
                 onPress={() => setCondition('Text To Image (Ai Prompt)')}
                 label="Text To Image (Ai Prompt)"
               />
@@ -108,7 +126,7 @@ const YourCard = () => {
                   {/* <Text s>Card</Text> */}
                   <ImageBackground
                     style={tw` w-full h-50 rounded-2xl`}
-                    source={img ? img.img : require('../../assets/image.png')}
+                    source={img ? img?.img : require('../../assets/image.png')}
                   />
                 </View>
                 <View style={tw`flex-row items-center gap-2`}>
@@ -146,7 +164,7 @@ const YourCard = () => {
                           start={{x: 0, y: 0}}
                           end={{x: 1, y: 0}}
                           style={[
-                            tw`w-33 h-23 mr-2 rounded-2xl`,
+                            tw`w-30 h-20 mr-2 rounded-2xl`,
                             {
                               marginLeft: -5,
                               // height: 150,
@@ -165,7 +183,7 @@ const YourCard = () => {
                               setImg(item);
                             }}
                             style={[
-                              tw` w-30 h-20 rounded-2xl overflow-hidden `,
+                              tw` w-27 h-17 rounded-2xl overflow-hidden `,
                               {
                                 // borderColor: listIndex === index ? 'black' : '',
                                 // borderWidth: listIndex === index ? 5 : 0,
@@ -199,13 +217,21 @@ const YourCard = () => {
             </>
           ) : condition === 'Upload Image' ? (
             <View style={tw`w-[100%] gap-3 mt-1  justify-center p-5`}>
-              <View style={tw` w-full h-50 rounded-2xl overflow-hidden`}>
-                {/* <Text s>Card</Text> */}
-                <ImageBackground
-                  style={tw` w-full h-50 rounded-2xl`}
-                  source={require('../../assets/image.png')}
-                />
-              </View>
+              {uploadImg === '' ? (
+                <TouchableOpacity
+                  onPress={pickImg}
+                  style={tw` border  border-dashed items-center justify-center  w-full h-50 rounded-2xl `}>
+                  <Icon name="cloudupload" size={39} />
+                </TouchableOpacity>
+              ) : (
+                <View style={tw` overflow-hidden   w-full h-50 rounded-2xl `}>
+                  {/* <Text s>Card</Text> */}
+                  <ImageBackground
+                    style={tw` w-full h-50 rounded-2xl`}
+                    source={{uri: uploadImg.uri}}
+                  />
+                </View>
+              )}
             </View>
           ) : (
             <>
@@ -237,7 +263,11 @@ const YourCard = () => {
           <Btn
             right
             title="Continue"
-            onPress={() => navigation.navigate('Preview', {img: img})}
+            onPress={() =>
+              navigation.navigate('Preview', {
+                img: uploadImg === '' ? img : uploadImg,
+              })
+            }
             style={{
               width: '45%',
               borderColor: 'grey',

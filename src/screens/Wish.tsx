@@ -3,8 +3,10 @@ import React from 'react';
 import tw from 'twrnc';
 import Input from '../components/Input';
 import Btn from '../components/Btn';
+import Icon from 'react-native-vector-icons/Ionicons';
 import {useNavigation} from '@react-navigation/native';
 import LinearGradient from 'react-native-linear-gradient';
+import BackBtn from '../components/BackBtn';
 const Wish = () => {
   const navigation = useNavigation();
   return (
@@ -13,10 +15,11 @@ const Wish = () => {
         tw`flex-1 justify-between`,
         {backgroundColor: 'rgba(234, 247, 252, 1)'},
       ]}>
-      <View style={tw` items-center  w-full justify-center px-5 `}>
+      <View style={tw` items-center  w-full justify-center px-2 `}>
+        <BackBtn />
         <Image
           style={{
-            marginTop: 50,
+            marginTop: 20,
             width: 100,
             height: 100,
             marginBottom: 10,

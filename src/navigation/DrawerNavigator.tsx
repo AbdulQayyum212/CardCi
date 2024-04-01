@@ -8,6 +8,7 @@ import Home from '../screens/Home';
 import {Image} from 'react-native';
 import MyContact from '../screens/MyContact';
 import MyOrder from '../screens/MyOrder';
+import Wish from '../screens/Wish';
 const Drawer = createDrawerNavigator();
 
 const DrawerNavigator = () => {
@@ -96,6 +97,25 @@ const DrawerNavigator = () => {
           {props => (
             <DrawerScreenContainer {...props}>
               <MyOrder />
+            </DrawerScreenContainer>
+          )}
+        </Drawer.Screen>
+        <Drawer.Screen
+          name="Add More"
+          options={{
+            sceneContainerStyle: {flexDirection: 'row-reverse'},
+            drawerIcon: ({color}) => (
+              // <Icon name="home" size={25} style={{ marginRight: -20, color }} />
+              <Image
+                resizeMode="contain"
+                style={{width: 25, height: 25, marginRight: -20}}
+                source={require('../../assets/MyOrder.png')}
+              />
+            ),
+          }}>
+          {props => (
+            <DrawerScreenContainer {...props}>
+              <Wish />
             </DrawerScreenContainer>
           )}
         </Drawer.Screen>

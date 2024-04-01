@@ -7,6 +7,7 @@ import {useNavigation} from '@react-navigation/native';
 import {useToast} from 'react-native-toast-notifications';
 import {ToastError, ToastSuccess} from '../Config/Constants';
 import Toast from 'react-native-toast-message';
+import BackBtn from '../components/BackBtn';
 export default function RecipientName() {
   const navigation = useNavigation();
   const [name, setName] = useState('');
@@ -17,9 +18,10 @@ export default function RecipientName() {
         {backgroundColor: 'rgba(234, 247, 252, 1)'},
       ]}>
       <View style={tw` items-center  w-full justify-center px-5 `}>
+        <BackBtn />
         <Image
           style={{
-            marginTop: 50,
+            marginTop: 20,
             width: 100,
             height: 100,
             marginBottom: 10,

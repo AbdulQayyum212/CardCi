@@ -1,11 +1,20 @@
-import {View, Text, SafeAreaView, Image, ScrollView} from 'react-native';
+import {
+  View,
+  Text,
+  SafeAreaView,
+  Image,
+  ScrollView,
+  TouchableOpacity,
+} from 'react-native';
 import React, {useState} from 'react';
 import tw from 'twrnc';
 import Input from '../components/Input';
 import Btn from '../components/Btn';
 import {useNavigation} from '@react-navigation/native';
+import Icon from 'react-native-vector-icons/Ionicons';
 import {Alert} from 'react-native';
 import Chip from '../components/Chip';
+import BackBtn from '../components/BackBtn';
 const SelectOccasion = () => {
   const navigation = useNavigation();
   const [condition, setCondition] = useState('celebration');
@@ -16,9 +25,10 @@ const SelectOccasion = () => {
         {backgroundColor: 'rgba(234, 247, 252, 1)'},
       ]}>
       <View style={tw`  items-center  w-full justify-center px-5 `}>
+        <BackBtn />
         <Image
           style={{
-            marginTop: 50,
+            marginTop: 20,
             width: 100,
             height: 100,
             marginBottom: 10,
@@ -36,31 +46,41 @@ const SelectOccasion = () => {
         <View>
           <View style={tw`w-[100%] gap-3 mt-5 flex-row`}>
             <Chip
-             color={condition === 'celebration'?['#BAF2E2', '#B8D1FC']:[
-              'rgba(234, 247, 252, 1)',
-              'rgba(234, 247, 252, 1)',
-            ]}
+              color={
+                condition === 'celebration'
+                  ? ['#BAF2E2', '#B8D1FC']
+                  : ['rgba(234, 247, 252, 1)', 'rgba(234, 247, 252, 1)']
+              }
               onPress={() => setCondition('celebration')}
               label="celebration"
             />
-            <Chip    color={condition === 'Festival'?['#BAF2E2', '#B8D1FC']:[
-                'rgba(234, 247, 252, 1)',
-                'rgba(234, 247, 252, 1)',
-              ]} onPress={() => setCondition('Festival')} label="Festival" />
-            <Chip 
-            color={condition === 'Holidays'?['#BAF2E2', '#B8D1FC']:[
-              'rgba(234, 247, 252, 1)',
-              'rgba(234, 247, 252, 1)',
-            ]}
-             onPress={() => setCondition('Holidays')} label="Holidays" />
+            <Chip
+              color={
+                condition === 'Festival'
+                  ? ['#BAF2E2', '#B8D1FC']
+                  : ['rgba(234, 247, 252, 1)', 'rgba(234, 247, 252, 1)']
+              }
+              onPress={() => setCondition('Festival')}
+              label="Festival"
+            />
+            <Chip
+              color={
+                condition === 'Holidays'
+                  ? ['#BAF2E2', '#B8D1FC']
+                  : ['rgba(234, 247, 252, 1)', 'rgba(234, 247, 252, 1)']
+              }
+              onPress={() => setCondition('Holidays')}
+              label="Holidays"
+            />
           </View>
         </View>
         <View>
           <Chip
-           color={condition === 'Create Your Own Occasion'?['#BAF2E2', '#B8D1FC']:[
-            'rgba(234, 247, 252, 1)',
-            'rgba(234, 247, 252, 1)',
-          ]}
+            color={
+              condition === 'Create Your Own Occasion'
+                ? ['#BAF2E2', '#B8D1FC']
+                : ['rgba(234, 247, 252, 1)', 'rgba(234, 247, 252, 1)']
+            }
             onPress={() => setCondition('Create Your Own Occasion')}
             label="Create Your Own Occasion"
           />
@@ -75,36 +95,40 @@ const SelectOccasion = () => {
           <>
             <View style={tw`w-[100%] gap-3 mt-5 flex-row justify-center`}>
               <Chip
-                color={condition === 'Birthday'?['#BAF2E2', '#B8D1FC']:[
-                  'rgba(234, 247, 252, 1)',
-                  'rgba(234, 247, 252, 1)',
-                ]}
+                color={
+                  condition === 'Birthday'
+                    ? ['#BAF2E2', '#B8D1FC']
+                    : ['rgba(234, 247, 252, 1)', 'rgba(234, 247, 252, 1)']
+                }
                 // onPress={() => setCondition('Create Your Own Occasion')}
                 label="Birthday"
               />
               <Chip
-               color={condition === "Fathers/Mother Days"?['#BAF2E2', '#B8D1FC']:[
-                'rgba(234, 247, 252, 1)',
-                'rgba(234, 247, 252, 1)',
-              ]}
+                color={
+                  condition === 'Fathers/Mother Days'
+                    ? ['#BAF2E2', '#B8D1FC']
+                    : ['rgba(234, 247, 252, 1)', 'rgba(234, 247, 252, 1)']
+                }
                 // onPress={() => setCondition('Create Your Own Occasion')}
                 label="Fathers/Mother Days"
               />
             </View>
             <View style={tw`w-[100%] gap-3 mt-5 flex-row justify-center`}>
               <Chip
-                 color={condition === "Wedding Anniversary"?['#BAF2E2', '#B8D1FC']:[
-                  'rgba(234, 247, 252, 1)',
-                  'rgba(234, 247, 252, 1)',
-                ]}
+                color={
+                  condition === 'Wedding Anniversary'
+                    ? ['#BAF2E2', '#B8D1FC']
+                    : ['rgba(234, 247, 252, 1)', 'rgba(234, 247, 252, 1)']
+                }
                 // onPress={() => setCondition('Create Your Own Occasion')}
                 label="Wedding Anniversary"
               />
               <Chip
-                 color={condition === "Anniversary"?['#BAF2E2', '#B8D1FC']:[
-                  'rgba(234, 247, 252, 1)',
-                  'rgba(234, 247, 252, 1)',
-                ]}
+                color={
+                  condition === 'Anniversary'
+                    ? ['#BAF2E2', '#B8D1FC']
+                    : ['rgba(234, 247, 252, 1)', 'rgba(234, 247, 252, 1)']
+                }
                 // onPress={() => setCondition('Create Your Own Occasion')}
                 label="Anniversary"
               />
@@ -113,18 +137,20 @@ const SelectOccasion = () => {
         ) : condition === 'Festival' ? (
           <View style={tw`w-[100%] gap-3 mt-5 flex-row justify-center`}>
             <Chip
-             color={condition === "All Religions Above"?['#BAF2E2', '#B8D1FC']:[
-              'rgba(234, 247, 252, 1)',
-              'rgba(234, 247, 252, 1)',
-            ]}
+              color={
+                condition === 'All Religions Above'
+                  ? ['#BAF2E2', '#B8D1FC']
+                  : ['rgba(234, 247, 252, 1)', 'rgba(234, 247, 252, 1)']
+              }
               // onPress={() => setCondition('Create Your Own Occasion')}
               label="All Religions Above"
             />
             <Chip
-                color={condition === "Chinese New Year 2024"?['#BAF2E2', '#B8D1FC']:[
-                  'rgba(234, 247, 252, 1)',
-                  'rgba(234, 247, 252, 1)',
-                ]}
+              color={
+                condition === 'Chinese New Year 2024'
+                  ? ['#BAF2E2', '#B8D1FC']
+                  : ['rgba(234, 247, 252, 1)', 'rgba(234, 247, 252, 1)']
+              }
               // onPress={() => setCondition('Create Your Own Occasion')}
               label="Chinese New Year 2024"
             />
@@ -149,10 +175,11 @@ const SelectOccasion = () => {
                 //     source={value.image}
                 //   />
                 // }
-                color={condition === "Christmas"?['#BAF2E2', '#B8D1FC']:[
-                  'rgba(234, 247, 252, 1)',
-                  'rgba(234, 247, 252, 1)',
-                ]}
+                color={
+                  condition === 'Christmas'
+                    ? ['#BAF2E2', '#B8D1FC']
+                    : ['rgba(234, 247, 252, 1)', 'rgba(234, 247, 252, 1)']
+                }
                 label={'Christmas'}
                 onPress={() => Alert.alert('Hello')}
               />
@@ -173,10 +200,11 @@ const SelectOccasion = () => {
                 //     source={value.image}
                 //   />
                 // }
-                color={condition === "New Years"?['#BAF2E2', '#B8D1FC']:[
-                  'rgba(234, 247, 252, 1)',
-                  'rgba(234, 247, 252, 1)',
-                ]}
+                color={
+                  condition === 'New Years'
+                    ? ['#BAF2E2', '#B8D1FC']
+                    : ['rgba(234, 247, 252, 1)', 'rgba(234, 247, 252, 1)']
+                }
                 label={'New Years'}
                 // onPress={() =>
                 //   setPublishListing((prev: any) => ({
@@ -207,10 +235,11 @@ const SelectOccasion = () => {
                 //     source={value.image}
                 //   />
                 // }
-                color={condition === "Thanksgiving "?['#BAF2E2', '#B8D1FC']:[
-                  'rgba(234, 247, 252, 1)',
-                  'rgba(234, 247, 252, 1)',
-                ]}
+                color={
+                  condition === 'Thanksgiving '
+                    ? ['#BAF2E2', '#B8D1FC']
+                    : ['rgba(234, 247, 252, 1)', 'rgba(234, 247, 252, 1)']
+                }
                 label={'Thanksgiving '}
                 // onPress={() =>
                 //   setPublishListing((prev: any) => ({
@@ -243,10 +272,11 @@ const SelectOccasion = () => {
                 //     source={value.image}
                 //   />
                 // }
-                color={condition === "Easter"?['#BAF2E2', '#B8D1FC']:[
-                  'rgba(234, 247, 252, 1)',
-                  'rgba(234, 247, 252, 1)',
-                ]}
+                color={
+                  condition === 'Easter'
+                    ? ['#BAF2E2', '#B8D1FC']
+                    : ['rgba(234, 247, 252, 1)', 'rgba(234, 247, 252, 1)']
+                }
                 label={'Easter'}
                 onPress={() => Alert.alert('Hello')}
               />
@@ -267,10 +297,11 @@ const SelectOccasion = () => {
                 //     source={value.image}
                 //   />
                 // }
-                color={condition === "Halloween"?['#BAF2E2', '#B8D1FC']:[
-                  'rgba(234, 247, 252, 1)',
-                  'rgba(234, 247, 252, 1)',
-                ]}
+                color={
+                  condition === 'Halloween'
+                    ? ['#BAF2E2', '#B8D1FC']
+                    : ['rgba(234, 247, 252, 1)', 'rgba(234, 247, 252, 1)']
+                }
                 label={'Halloween'}
                 // onPress={() =>
                 //   setPublishListing((prev: any) => ({
@@ -301,10 +332,11 @@ const SelectOccasion = () => {
                 //     source={value.image}
                 //   />
                 // }
-                color={condition === "St Patrick’s Day"?['#BAF2E2', '#B8D1FC']:[
-                  'rgba(234, 247, 252, 1)',
-                  'rgba(234, 247, 252, 1)',
-                ]}
+                color={
+                  condition === 'St Patrick’s Day'
+                    ? ['#BAF2E2', '#B8D1FC']
+                    : ['rgba(234, 247, 252, 1)', 'rgba(234, 247, 252, 1)']
+                }
                 label={'St Patrick’s Day'}
                 // onPress={() =>
                 //   setPublishListing((prev: any) => ({
@@ -337,10 +369,11 @@ const SelectOccasion = () => {
                 //     source={value.image}
                 //   />
                 // }
-                color={condition === "Happy Holidays"?['#BAF2E2', '#B8D1FC']:[
-                  'rgba(234, 247, 252, 1)',
-                  'rgba(234, 247, 252, 1)',
-                ]}
+                color={
+                  condition === 'Happy Holidays'
+                    ? ['#BAF2E2', '#B8D1FC']
+                    : ['rgba(234, 247, 252, 1)', 'rgba(234, 247, 252, 1)']
+                }
                 label={'Happy Holidays'}
                 onPress={() => Alert.alert('Hello')}
               />
