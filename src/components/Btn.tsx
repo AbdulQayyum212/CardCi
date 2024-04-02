@@ -3,7 +3,7 @@ import React from 'react';
 import tw from 'twrnc';
 import Icon from 'react-native-vector-icons/Fontisto';
 import LinearGradient from 'react-native-linear-gradient';
-const Btn = ({style, title, onPress, left, right}: any) => {
+const Btn = ({style, title, onPress, left, right, textStyle}: any) => {
   return (
     <LinearGradient
       style={[
@@ -29,7 +29,9 @@ const Btn = ({style, title, onPress, left, right}: any) => {
             source={require('../../assets/lefticon.png')}
           />
         )}
-        <Text style={tw`text-black font-bold text-base`}>{title}</Text>
+        <Text style={[tw`text-black font-bold text-base`, textStyle]}>
+          {title}
+        </Text>
         {right && (
           <Image
             style={{width: 30, height: 15}}

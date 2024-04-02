@@ -43,7 +43,7 @@ const DeliveryDate = () => {
           </Text>
           <View style={tw`p-[20] w-[100%] `}>
             <View
-              style={tw`bg-white border-4 w-{100%} rounded-3xl p-3 flex-row items-center justify-between `}>
+              style={tw`bg-white border-2 w-{100%} rounded-3xl p-3 flex-row items-center justify-between `}>
               <Text style={tw`text-black font-bold`}>{selectedDate}</Text>
               <TouchableOpacity
                 onPress={() => {

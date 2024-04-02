@@ -9,6 +9,8 @@ import {Image} from 'react-native';
 import MyContact from '../screens/MyContact';
 import MyOrder from '../screens/MyOrder';
 import Wish from '../screens/Wish';
+import SignIn from '../screens/SignIn';
+import AuthStackNavigation from './AuthStackNavigation';
 const Drawer = createDrawerNavigator();
 
 const DrawerNavigator = () => {
@@ -116,6 +118,25 @@ const DrawerNavigator = () => {
           {props => (
             <DrawerScreenContainer {...props}>
               <Wish />
+            </DrawerScreenContainer>
+          )}
+        </Drawer.Screen>
+        <Drawer.Screen
+          name="Log out"
+          options={{
+            sceneContainerStyle: {flexDirection: 'row-reverse'},
+            drawerIcon: ({color}) => (
+              // <Icon name="home" size={25} style={{ marginRight: -20, color }} />
+              <Image
+                resizeMode="contain"
+                style={{width: 25, height: 25, marginRight: -20}}
+                source={require('../../assets/MyOrder.png')}
+              />
+            ),
+          }}>
+          {props => (
+            <DrawerScreenContainer {...props}>
+              <AuthStackNavigation />
             </DrawerScreenContainer>
           )}
         </Drawer.Screen>

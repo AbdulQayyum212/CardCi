@@ -32,36 +32,62 @@ const MyContact = () => {
               return (
                 <View style={tw`gap-3`}>
                   <TouchableOpacity
-                    onPress={() => navigation.navigate('RecipientName')}
+                    // onPress={() => navigation.navigate('RecipientName')}
                     style={[
-                      tw`w-[100%]  border rounded-2xl h-[35] overflow-hidden mt-3`,
+                      tw`w-[100%] shadow-lg bg-white items-center justify-center  rounded-2xl h-[35] overflow-hidden mt-3`,
                     ]}>
-                    <ImageBackground
+                    {/* <ImageBackground
                       blurRadius={10}
                       style={[
                         tw`w-[100%] h-[35] rounded-2xl items-center justify-center `,
                       ]}
                       resizeMode="cover"
-                      source={require('../../assets/cardImage.jpeg')}>
-                      <Text style={[tw`text-black font-bold text-[6]`]}>
-                        {`Name: ${item.name}`}
-                      </Text>
-                      <Text style={[tw`text-black font-bold text-[6]`]}>
-                        {`Relationship:${item.RelationShip}`}
-                      </Text>
-                    </ImageBackground>
-                  </TouchableOpacity>
-                  <TouchableOpacity
-                    onPress={() => navigation.navigate('SelectOccasion')}>
-                    <LinearGradient
-                      colors={['#BAF2E2', '#B8D1FC']}
-                      style={[
-                        tw`w-[100%] rounded-full h-12 items-center justify-center`,
-                      ]}>
-                      <Text style={tw`text-black text-lg font-bold`}>
-                        Create a Card
-                      </Text>
-                    </LinearGradient>
+                      source={require('../../assets/cardImage.jpeg')}> */}
+                    <View
+                      style={tw`flex-row items-center justify-around w-full`}>
+                      <View>
+                        <Text style={[tw`text-black font-bold text-[4.5]`]}>
+                          {`Name: ${item.name}`}
+                        </Text>
+                        <Text style={[tw`text-black font-bold text-[4.5]`]}>
+                          {`Address: ${item.address}`}
+                        </Text>
+                        <Text style={[tw`text-black font-bold text-[4.5]`]}>
+                          {`City: ${item.city}`}
+                        </Text>
+                        <Text style={[tw`text-black font-bold text-[4.5]`]}>
+                          {`Relationship:${item.RelationShip}`}
+                        </Text>
+                      </View>
+                      <View style={tw`gap-5`}>
+                        <TouchableOpacity
+                        // onPress={() => navigation.navigate('SelectOccasion')}
+                        >
+                          <LinearGradient
+                            colors={['#BAF2E2', '#B8D1FC']}
+                            style={[
+                              tw`w-[100%] p-2 rounded-xl h-12 items-center justify-center`,
+                            ]}>
+                            <Text style={tw`text-red-500  font-bold`}>
+                              Delete
+                            </Text>
+                          </LinearGradient>
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                          onPress={() => navigation.navigate('SelectOccasion')}>
+                          <LinearGradient
+                            colors={['#BAF2E2', '#B8D1FC']}
+                            style={[
+                              tw`w-[100%] p-2 rounded-xl h-12 items-center justify-center`,
+                            ]}>
+                            <Text style={tw`text-black  font-bold`}>
+                              Create a Card
+                            </Text>
+                          </LinearGradient>
+                        </TouchableOpacity>
+                      </View>
+                    </View>
+                    {/* </ImageBackground> */}
                   </TouchableOpacity>
                 </View>
               );

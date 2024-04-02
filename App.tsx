@@ -7,6 +7,8 @@ import {Provider} from 'react-redux';
 import {PersistGate} from 'redux-persist/integration/react';
 import {persistor, store} from './src/stores/store';
 import YourCard from './src/screens/YourCard';
+import SignIn from './src/screens/SignIn';
+import AuthStackNavigation from './src/navigation/AuthStackNavigation';
 // import { Provider } from 'react-redux';
 
 const App = () => {
@@ -15,7 +17,8 @@ const App = () => {
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
           <NavigationContainer>
-            <StackNavigation />
+            {/* <StackNavigation /> */}
+            <AuthStackNavigation />
           </NavigationContainer>
         </PersistGate>
         <Toast

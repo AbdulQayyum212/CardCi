@@ -16,15 +16,16 @@ import {useNavigation} from '@react-navigation/native';
 import {Alert} from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign';
 import LinearGradient from 'react-native-linear-gradient';
-import {Asset, launchImageLibrary} from 'react-native-image-picker';
+import {launchImageLibrary} from 'react-native-image-picker';
 import Chip from '../components/Chip';
 import BackBtn from '../components/BackBtn';
+import {Asset} from 'src/type/pickImg';
 const YourCard = () => {
   const navigation = useNavigation();
   const [condition, setCondition] = useState('Choose a Template');
   const [flatListScrollIndex, setFLatListScrollIndex] = useState(0);
   const [img, setImg] = useState<string>('');
-  const [uploadImg, setUploadImg] = useState('');
+  const [uploadImg, setUploadImg] = useState<Asset[]>([]);
   const [selectedPlaceId, setSelectedPlaceId] = useState<number>(0);
   const [listIndex, setListIndex] = useState<number>();
   const image = [
@@ -44,9 +45,9 @@ const YourCard = () => {
   ];
   const pickImg = async () => {
     const res = await launchImageLibrary(
-      {mediaType: 'photo', selectionLimit: 5},
+      {mediaType: 'photo', selectionLimit: 1},
       value => {
-        if (value.assets != undefined) setUploadImg(value?.assets[0]);
+        if (value.assets != undefined) setUploadImg([value.assets[0]]);
       },
     );
     console.log('==================================== img', res);
@@ -96,7 +97,7 @@ const YourCard = () => {
                     : ['rgba(234, 247, 252, 1)', 'rgba(234, 247, 252, 1)']
                 }
                 onPress={() => {
-                  setUploadImg('');
+                  setUploadImg([]);
                   setCondition('Upload Image');
                 }}
                 label="Upload Image"
@@ -217,7 +218,7 @@ const YourCard = () => {
             </>
           ) : condition === 'Upload Image' ? (
             <View style={tw`w-[100%] gap-3 mt-1  justify-center p-5`}>
-              {uploadImg === '' ? (
+              {uploadImg.length === 0 ? (
                 <TouchableOpacity
                   onPress={pickImg}
                   style={tw` border  border-dashed items-center justify-center  w-full h-50 rounded-2xl `}>
