@@ -6,7 +6,7 @@ import Btn from '../components/Btn';
 import {useNavigation} from '@react-navigation/native';
 import Toast from 'react-native-toast-message';
 import {ToastError} from '../Config/Constants';
-import {setProperties} from '../stores/actions/AddCardAction';
+import {setAddCard, setProperties} from '../stores/actions/AddCardAction';
 import {useDispatch, useSelector} from 'react-redux';
 import BackBtn from '../components/BackBtn';
 import {selectCardState} from '../stores/store';
@@ -134,7 +134,7 @@ const PersonLike = ({route}) => {
                 return Toast.show(ToastError('Recipients Address is Required'));
               if (data.recipientsNumber === 0)
                 return Toast.show(ToastError('Recipients Number is Required'));
-              dispatch(setProperties([...AddCard, data]));
+              dispatch(setAddCard([...AddCard, data]));
               navigation.navigate('Home');
               console.log('Data', data);
             }}

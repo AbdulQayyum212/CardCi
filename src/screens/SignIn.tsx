@@ -21,7 +21,6 @@ const SignIn = () => {
         {backgroundColor: 'rgba(234, 247, 252, 1)'},
       ]}>
       <View style={tw` items-center  w-full justify-center px-5 `}>
-        <BackBtn />
         <Image
           style={{
             marginTop: 20,

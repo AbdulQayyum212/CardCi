@@ -26,12 +26,11 @@ export default function HomeHeader({
   // const user = useSelector(selectProfileData);
   return (
     <View style={style.header}>
-      <View
-      // ref={(r) => {
-      //   addTarget && addTarget(r, '0');
-      // }}
-      >
-        <View style={tw`flex-row items-center justify-between`}>
+      <Text style={{fontWeight: 'bold', fontSize: 16, textAlign: 'center'}}>
+        {heading}
+      </Text>
+      <View style={{width: 20}} />
+      {/* <View style={tw`flex-row items-center justify-between`}>
           <TouchableOpacity
             onPress={navigation.toggleDrawer}
             style={tw`w-[20px] items-center justify-center rounded-[1.2]	 mr-2 h-[26px] `}>
@@ -40,10 +39,9 @@ export default function HomeHeader({
               size={25}
               // style={styles.dropdownButtonArrowStyle}
             />
-          </TouchableOpacity>
-        </View>
-      </View>
-      <Text style={{fontWeight: 'bold', fontSize: 16}}>{heading}</Text>
+          </TouchableOpacity> 
+        </View>*/}
+
       <View style={{width: 20}} />
     </View>
   );
@@ -53,10 +51,8 @@ const style = StyleSheet.create({
   header: {
     padding: 10,
     backgroundColor: 'rgba(234, 247, 252, 1)',
-    // flex: 1,
     width: '100%',
     flexDirection: 'row',
-    // backgroundColor: 'red',
     justifyContent: 'space-between',
     alignItems: 'center',
   },
