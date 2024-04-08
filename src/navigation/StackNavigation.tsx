@@ -10,6 +10,7 @@ import DeliveryDate from '../screens/ DeliveryDate';
 import YourCard from '../screens/YourCard';
 import Preview from '../screens/Preview';
 import Wish from '../screens/Wish';
+import BookingStatus from '../screens/BookingStatus';
 
 const Stack = createNativeStackNavigator();
 const StackNavigation = () => {
@@ -26,6 +27,7 @@ const StackNavigation = () => {
       <Stack.Screen name="YourCard" component={YourCard} />
       <Stack.Screen name="Preview" component={Preview} />
       <Stack.Screen name="Wish" component={Wish} />
+      <Stack.Screen name="BookingStatus" component={BookingStatus} />
     </Stack.Navigator>
   );
 };

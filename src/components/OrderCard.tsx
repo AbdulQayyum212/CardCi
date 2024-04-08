@@ -4,17 +4,21 @@ import tw from 'twrnc';
 import {Avatar} from 'react-native-paper';
 import LinearGradient from 'react-native-linear-gradient';
 import Icon from 'react-native-vector-icons/Ionicons';
+import {useNavigation} from '@react-navigation/native';
 
 const OrderCard = () => {
+  const navigation = useNavigation();
   return (
-    <View style={tw`rounded-lg bg-white shadow-lg  p-1 gap-2`}>
+    <TouchableOpacity
+      onPress={() => navigation.navigate('BookingStatus')}
+      style={tw`rounded-lg bg-white shadow-lg  p-1 gap-2`}>
       <View style={tw`flex-row items-center`}>
-        <TouchableOpacity>
+        <View>
           <Image
             style={tw`m-2 w-15 h-15 rounded-lg`}
             source={require('../../assets/cardImage.jpeg')}
           />
-        </TouchableOpacity>
+        </View>
         {/* <Image
         style={tw` h-13 rounded-full mt-5 top--2 mx-1`}
         source={require('../../assets/Line.png')}
@@ -74,7 +78,7 @@ const OrderCard = () => {
         <Text>Event Date</Text>
         <Text>6/04/2024</Text>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
