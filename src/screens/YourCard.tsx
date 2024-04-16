@@ -200,6 +200,7 @@ const YourCard = () => {
                       );
                     }}
                   />
+
                   <TouchableOpacity
                     //next
                     onPress={() => {

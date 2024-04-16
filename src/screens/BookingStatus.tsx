@@ -27,7 +27,7 @@ const BookingStatus = () => {
                   />
                   <LinearGradient
                     colors={['#BAF2E2', '#B8D1FC']}
-                    style={tw` w-1 h-9 `}
+                    style={tw` w-[3px] h-9 `}
                   />
                 </View>
               </View>
@@ -43,8 +43,8 @@ const BookingStatus = () => {
                     style={tw` h-4 w-4 bg-black rounded-full`}
                   />
                   <LinearGradient
-                    colors={['#BAF2E2', '#B8D1FC']}
-                    style={tw` w-1 h-9 `}
+                    colors={['#808080', '#808080']}
+                    style={tw` w-[3px] h-9 `}
                   />
                 </View>
               </View>
@@ -58,12 +58,12 @@ const BookingStatus = () => {
                 <Text>10:40</Text>
                 <View style={tw`items-center`}>
                   <LinearGradient
-                    colors={['#BAF2E2', '#B8D1FC']}
+                    colors={['#808080', '#808080']}
                     style={tw` h-4 w-4 bg-black rounded-full`}
                   />
                   <LinearGradient
-                    colors={['#BAF2E2', '#B8D1FC']}
-                    style={tw` w-1 h-9`}
+                    colors={['#808080', '#808080']}
+                    style={tw` w-[3px] h-9`}
                   />
                 </View>
               </View>
@@ -75,7 +75,7 @@ const BookingStatus = () => {
                 <Text>10:40</Text>
                 <View style={tw`items-center`}>
                   <LinearGradient
-                    colors={['#BAF2E2', '#B8D1FC']}
+                    colors={['#808080', '#808080']}
                     style={tw` h-4 w-4 bg-black rounded-full`}
                   />
                 </View>
@@ -85,6 +85,7 @@ const BookingStatus = () => {
           </View>
         </View>
       </View>
+      {/* Header */}
       <View
         style={{
           position: 'absolute',

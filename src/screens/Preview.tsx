@@ -104,7 +104,8 @@ const Preview = ({route}) => {
             ]}>
             <ImageBackground
               style={tw` w-full h-50 rounded-2xl`}
-              source={route?.params?.img?.img}
+              // source={{uri: route?.params?.img?.img}}
+              source={require('../../assets/cardImage.jpeg')}
             />
           </Animated.View>
           <Animated.View

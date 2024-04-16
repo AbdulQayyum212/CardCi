@@ -3,7 +3,6 @@ import React, {useState} from 'react';
 import tw from 'twrnc';
 import {useNavigation} from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import HomeHeader from '../components/HomeHeader';
 import LinearGradient from 'react-native-linear-gradient';
 import MyContact from './MyContact';
 import MyOrder from './MyOrder';
@@ -14,7 +13,6 @@ const Home = () => {
   const [condition, setCondition] = useState('My Contact');
   return (
     <SafeAreaView style={tw`h-full`}>
-      {/* <HomeHeader heading="Home" /> */}
       <View style={tw`flex-row  h-full`}>
         <LinearGradient
           colors={['#BAF2E2', '#B8D1FC']}
@@ -32,6 +30,7 @@ const Home = () => {
               source={require('../../assets/cardci-Logo.png')}
             />
           </View>
+          {/* SideBar Tabs */}
           <View style={tw`gap-8`}>
             <TouchableOpacity
               onPress={() => setCondition('Dashboard')}
